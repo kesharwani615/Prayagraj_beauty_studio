@@ -81,9 +81,9 @@ const HeroSection = () => {
             </div>
 
             {/* Light Bottom Section */}
-            <div className="hero-light fade-on-scroll">
+            <div className="hero-light">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                     <div className="w-full lg:w-1/2 flex justify-between py-3">
+                     <div className="w-full lg:w-1/2 flex justify-between py-3 fade-on-scroll">
                             <div className=" flex flex-col items-center justify-center gap-2 ">
                                 <div className="h-[50px] w-[50px]">
                                 <Image src={group}

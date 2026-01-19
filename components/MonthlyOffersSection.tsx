@@ -54,7 +54,7 @@ const MonthlyOffersSection = () => {
         
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16 fade-in-on-load">
-          <h2 className="monthly-offers-title text-hero-text-dark mb-4">
+          <h2 className="monthly-offers-title text-hero-text-light! mb-4">
             Monthly Offers
           </h2>
           <p className="monthly-offers-subtitle text-hero-text-dark/80">

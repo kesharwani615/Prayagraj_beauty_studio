@@ -98,7 +98,7 @@ const AboutUsSection = () => {
 
       {/* Bottom Section - Treatments */}
       <div className="about-us-bottom bg-[#1a1a1a] py-16 lg:py-20 relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 fade-on-scroll">
           
           {/* Main Title */}
           <h3 className="about-us-treatment-title text-white mb-8 lg:mb-12 fade-in-on-load">
@@ -106,7 +106,7 @@ const AboutUsSection = () => {
           </h3>
 
           {/* Treatment Tabs */}
-          <div className="flex flex-wrap gap-3 lg:gap-4 mb-12 fade-in-on-load">
+          <div className="flex flex-wrap gap-3 lg:gap-4 mb-12 ">
             {treatments.map((treatment) => (
               <button
                 key={treatment.id}
@@ -154,9 +154,9 @@ const AboutUsSection = () => {
           </div>
 
           {/* Decorative Star */}
-          <div className="absolute bottom-8 right-8 w-16 h-16 opacity-30 hidden lg:block" aria-hidden="true">
+          <div className="absolute bottom-8 right-8 w-16 h-16 opacity-30 hidden lg:block" style={{ perspective: '500px' }} aria-hidden="true">
             <svg 
-              className="w-full h-full text-hero-light" 
+              className="w-full h-full text-[#ffbd08] rotate-earth-3d" 
               fill="currentColor" 
               viewBox="0 0 24 24"
             >

@@ -214,6 +214,22 @@ body {
   animation: rotate-continuous 2s linear infinite;
 }
 
+/* 3D rotation like Earth (rotating on Y-axis) */
+@keyframes rotate-earth-3d {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.rotate-earth-3d {
+  animation: rotate-earth-3d 4s linear infinite;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+}
+
 .voucher-expand {
   transition: width 2s ease-out, min-width 2s ease-out, max-width 2s ease-out;
 }

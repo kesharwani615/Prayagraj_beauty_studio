@@ -90,9 +90,9 @@ const PremiumProductsSection = () => {
 
         {/* Decorative Elements */}
         {/* Star/Floral in bottom left */}
-        <div className="absolute bottom-0 left-0 w-24 h-24 premium-decorative-star opacity-60" aria-hidden="true">
+        <div className="absolute bottom-0 left-0 w-24 h-24 premium-decorative-star opacity-60" style={{ perspective: '500px' }} aria-hidden="true">
           <svg 
-            className="w-full h-full text-hero-light" 
+            className="w-full h-full text-[#ffbd08] rotate-earth-3d" 
             fill="currentColor" 
             viewBox="0 0 24 24"
           >
