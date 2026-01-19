@@ -114,12 +114,13 @@ const Navbar: React.FC = () => {
               </Link>
               
               {/* Phone Number Tooltip on Hover */}
-              <div className="absolute right-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+              <div className="absolute right-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 ">
                 <div className="bg-navbar-text text-navbar-bg px-4 py-2 rounded-lg shadow-lg whitespace-nowrap">
                   <a 
                     href="tel:+919876543210" 
-                    className="flex items-center gap-2 text-sm font-semibold hover:underline"
+                    className="flex items-center gap-2 text-sm font-semibold hover:underline "
                   >
+                    <span className='shake-animation'>
                     <svg 
                       className="w-4 h-4" 
                       fill="none" 
@@ -132,8 +133,10 @@ const Navbar: React.FC = () => {
                         strokeLinejoin="round" 
                         strokeWidth={2} 
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
-                      />
+                        />
                     </svg>
+                        </span>
+
                     +91 98765 43210
                   </a>
                 </div>

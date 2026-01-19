@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import makeup1 from "@/public/images/now-word-bold-text-style.png"
 import makeup2 from "@/public/images/image-2.png"
 import makeup3 from "@/public/images/beautiful-woman.png"
@@ -26,17 +27,22 @@ const HeroSection = () => {
                             </p>
 
                            {/* Voucher Card */}
-                           <div className="bg-white/10 backdrop-blur-sm rounded-full 
+                           <Link 
+                             href="/services"
+                             className="bg-white/10 backdrop-blur-sm rounded-full 
   flex items-center gap-4 
   px-1 py-2
   h-25 lg:h-25
-  w-25 lg:w-25
-  hover:min-w-80 hover:max-w-md
+  min-w-80 max-w-md
+  lg:w-25 lg:min-w-0 lg:max-w-none
+  lg:hover:min-w-80 lg:hover:max-w-md
   voucher-expand
   overflow-hidden
   group
   cursor-pointer
-  hover:shadow-lg">
+  hover:shadow-lg
+  transition-all duration-300
+  hover:bg-white/15">
   {/* Icon Circle */}
   <div className="w-[6rem] h-[rem] flex items-center justify-center bg-white/20 rounded-full shrink-0 ">
     <Image 
@@ -47,16 +53,17 @@ const HeroSection = () => {
   </div>
   
   {/* Text Content */}
-  <div className="opacity-0 w-0 overflow-hidden 
-    group-hover:opacity-100 
-    group-hover:w-auto 
+  <div className="opacity-100 w-auto overflow-hidden 
+    lg:opacity-0 lg:w-0
+    lg:group-hover:opacity-100 
+    lg:group-hover:w-auto 
     voucher-text-expand
-    whitespace-nowrap ">
-    <h3 className="text-white font-semibold">Gift Your Loved One</h3>
-    <p className="text-white/80 text-sm">a Beauty Experience!</p>
-    <p className="text-white/80 text-sm">Book Now</p>
+    whitespace-nowrap">
+    <h3 className="text-white font-bold text-base lg:text-lg">✨ Special Offer</h3>
+    <p className="text-white/90 text-sm lg:text-base font-medium">Premium Beauty Services</p>
+    <p className="text-hero-accent text-xs lg:text-sm font-semibold mt-1">Explore & Book Now →</p>
   </div>
-</div>
+</Link>
                         </div>
 
                         {/* Right: Decorative Area */}
