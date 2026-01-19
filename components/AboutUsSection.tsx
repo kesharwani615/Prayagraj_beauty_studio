@@ -26,7 +26,7 @@ const AboutUsSection = () => {
   ]
 
   return (
-    <section id="about-us" className="about-us-section relative">
+    <section id="about-us" className="about-us-section relative fade-on-scroll">
       {/* Top Section - About Us */}
       <div className="about-us-top bg-hero-dark py-16 lg:py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

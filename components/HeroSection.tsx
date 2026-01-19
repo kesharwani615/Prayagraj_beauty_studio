@@ -14,14 +14,14 @@ const HeroSection = () => {
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12  overflow-hidden">
 
                         {/* Left: Text Content */}
-                        <div className="flex flex-col justify-center space-y-6 lg:space-y-8">
-                            <h1 className="text-white text-4xl lg:text-6xl font-bold fade-in-on-load">
+                        <div className="flex flex-col justify-center space-y-6 lg:space-y-8 fade-on-scroll">
+                            <h1 className="text-white text-4xl lg:text-6xl font-bold">
                                 Beauty Services<br/>
                                 Delivered to<br/>
                                 <span className="text-hero-accent">Your Home</span>
                             </h1>
 
-                            <p className=" text-white/90 text-lg lg:text-xl fade-in-on-load">
+                            <p className=" text-white/90 text-lg lg:text-xl ">
                                 Premium beauty treatments and skincare services at your doorstep. Experience luxury beauty care in the comfort of your home.
                             </p>
 
@@ -51,7 +51,7 @@ const HeroSection = () => {
     group-hover:opacity-100 
     group-hover:w-auto 
     voucher-text-expand
-    whitespace-nowrap">
+    whitespace-nowrap ">
     <h3 className="text-white font-semibold">Gift Your Loved One</h3>
     <p className="text-white/80 text-sm">a Beauty Experience!</p>
     <p className="text-white/80 text-sm">Book Now</p>
@@ -83,7 +83,7 @@ const HeroSection = () => {
             {/* Light Bottom Section */}
             <div className="hero-light ">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                     <div className="w-full lg:w-1/2 flex justify-between py-3 fade-in-on-load">
+                     <div className="w-full lg:w-1/2 flex justify-between py-3">
                             <div className=" flex flex-col items-center justify-center gap-2 ">
                                 <div className="h-[50px] w-[50px]">
                                 <Image src={group}
@@ -111,7 +111,7 @@ const HeroSection = () => {
                         </div>
                 </div>
             </div>
-            <div className="container border relative hidden lg:block right-[-5%] xl:right-[-70px] fade-in-on-load">
+            <div className="container border relative hidden lg:block right-[-5%] xl:right-[-70px]">
             <div className="relative top-0">
             <div className="hero-oval-angle absolute bottom-0 right-[10%] w-[30rem] h-[37rem] border-2 border-[#ecd8bd]"
                                 style={

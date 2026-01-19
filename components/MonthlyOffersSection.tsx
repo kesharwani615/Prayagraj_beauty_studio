@@ -3,8 +3,14 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Slider from 'react-slick'
 import { StaticImageData } from 'next/image'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import offer1 from "@/public/images/image5.png"
 import offer2 from "@/public/images/image6.png"
 import offer3 from "@/public/images/image7.png"
@@ -41,79 +47,6 @@ const MonthlyOffersSection = () => {
     },
   ]
 
-  // Custom arrow components
-  const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
-    <button
-      onClick={onClick}
-      className="monthly-offers-arrow monthly-offers-arrow-prev"
-      aria-label="Previous offer"
-    >
-      <svg 
-        className="w-6 h-6" 
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-          strokeWidth={2} 
-          d="M15 19l-7-7 7-7" 
-        />
-      </svg>
-    </button>
-  )
-
-  const NextArrow = ({ onClick }: { onClick?: () => void }) => (
-    <button
-      onClick={onClick}
-      className="monthly-offers-arrow monthly-offers-arrow-next"
-      aria-label="Next offer"
-    >
-      <svg 
-        className="w-6 h-6" 
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-          strokeWidth={2} 
-          d="M9 5l7 7-7 7" 
-        />
-      </svg>
-    </button>
-  )
-
-  // Slick carousel settings
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  }
 
   return (
     <section className="monthly-offers-section bg-hero-light py-16 lg:py-24">
@@ -130,45 +63,55 @@ const MonthlyOffersSection = () => {
         </div>
 
         {/* Offers Carousel */}
-        <div className="monthly-offers-carousel-wrapper mb-12">
-          <Slider {...settings}>
-            {offers.map((offer) => (
-              <div key={offer.id} className="px-3">
-                <div className="monthly-offer-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full">
-                  {/* Offer Image */}
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={offer.image}
-                      alt={offer.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
+        <div className="monthly-offers-carousel-wrapper mb-12 relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
+              {offers.map((offer) => (
+                <CarouselItem key={offer.id} className="pl-2 sm:pl-3 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <div className="monthly-offer-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full">
+                    {/* Offer Image */}
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={offer.image}
+                        alt={offer.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
 
-                  {/* Offer Info */}
-                  <div className="p-5 lg:p-6">
-                    {/* Offer Title */}
-                    <h3 className="monthly-offer-title mb-2">
-                      {offer.title}
-                    </h3>
+                    {/* Offer Info */}
+                    <div className="p-5 lg:p-6">
+                      {/* Offer Title */}
+                      <h3 className="monthly-offer-title mb-2">
+                        {offer.title}
+                      </h3>
 
-                    {/* Offer Description */}
-                    {offer.description && (
-                      <p className="monthly-offer-description mb-3">
-                        {offer.description}
-                      </p>
-                    )}
+                      {/* Offer Description */}
+                      {offer.description && (
+                        <p className="monthly-offer-description mb-3">
+                          {offer.description}
+                        </p>
+                      )}
 
-                    {/* Offer Price */}
-                    <div className="monthly-offer-price text-hero-accent font-semibold text-lg">
-                      {offer.price} <span className="text-sm text-hero-text-dark/60 font-normal">| session</span>
+                      {/* Offer Price */}
+                      <div className="monthly-offer-price text-hero-accent font-semibold text-lg">
+                        {offer.price} <span className="text-sm text-hero-text-dark/60 font-normal">| session</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="monthly-offers-arrow-prev-custom lg:hidden" />
+            <CarouselNext className="monthly-offers-arrow-next-custom lg:hidden" />
+          </Carousel>
         </div>
 
         {/* CTA Button */}

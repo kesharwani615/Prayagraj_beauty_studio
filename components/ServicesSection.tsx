@@ -1,10 +1,15 @@
 'use client'
 
-import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Slider from 'react-slick'
 import { StaticImageData } from 'next/image'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import service1 from "@/public/images/image5.png"
 import service2 from "@/public/images/image6.png"
 import service3 from "@/public/images/image7.png"
@@ -54,77 +59,6 @@ const ServicesSection = () => {
     }
   ]
 
-  // Custom arrow components
-  const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
-    <button
-      onClick={onClick}
-      className="services-arrow services-arrow-prev"
-      aria-label="Previous service"
-    >
-      <svg 
-        className="w-6 h-6" 
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-          strokeWidth={2} 
-          d="M15 19l-7-7 7-7" 
-        />
-      </svg>
-    </button>
-  )
-
-  const NextArrow = ({ onClick }: { onClick?: () => void }) => (
-    <button
-      onClick={onClick}
-      className="services-arrow services-arrow-next"
-      aria-label="Next service"
-    >
-      <svg 
-        className="w-6 h-6" 
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-          strokeWidth={2} 
-          d="M9 5l7 7-7 7" 
-        />
-      </svg>
-    </button>
-  )
-
-  // Slick carousel settings
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  }
 
   return (
     <section className="services-section bg-hero-light py-12 lg:py-20">
@@ -141,49 +75,48 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Carousel */}
-        <div className="services-carousel-wrapper mb-12">
-          <Slider {...settings}>
-            {services.map((service) => (
-              <div key={service.id} className="px-3">
-                <div className="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                  {/* Service Image */}
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    {/* Fallback */}
-                    {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                      <span className="text-gray-500 text-sm">Service Image</span>
-                    </div> */}
-                  </div>
+        <div className="services-carousel-wrapper mb-12 relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 sm:-ml-3 md:-ml-4">
+              {services.map((service) => (
+                <CarouselItem key={service.id} className="pl-2 sm:pl-3 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <div className="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 h-full">
+                    {/* Service Image */}
+                    <div className="relative aspect-square overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
 
-                  {/* Service Info */}
-                  <div className="p-4 lg:p-6 fade-in-on-load">
-                    {/* Offer Badge */}
-                    {/* {service.hasOffer && (
-                      <div className="service-offer-badge mb-2">
-                        Oferta
+                    {/* Service Info */}
+                    <div className="p-4 lg:p-6 fade-in-on-load">
+                      {/* Service Title */}
+                      <h3 className="service-card-title mb-3">
+                        {service.title}
+                      </h3>
+
+                      {/* Service Price */}
+                      <div className="service-price font-semibold">
+                        {service.price}
                       </div>
-                    )} */}
-
-                    {/* Service Title */}
-                    <h3 className="service-card-title mb-3">
-                      {service.title}
-                    </h3>
-
-                    {/* Service Price */}
-                    <div className="service-price font-semibold">
-                      {service.price}
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="services-arrow-prev-custom" />
+            <CarouselNext className="services-arrow-next-custom" />
+          </Carousel>
         </div>
 
         {/* CTA Button */}

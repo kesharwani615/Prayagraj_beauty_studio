@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
 
 :root {
   --background: #ffffff;
@@ -245,6 +243,38 @@ body {
   }
 }
 
+/* Animation classes with delays */
+.fade-in-on-load {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; /* Start invisible on first paint */
+}
+
+.fade-in-delay-1 {
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.fade-in-delay-2 {
+  animation: fadeInUp 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.fade-in-delay-3 {
+  animation: fadeInUp 1s ease-out 0.9s forwards;
+  opacity: 0;
+}
+
+/* Scroll-triggered animation using fadeInUp and initial opacity 0.1 */
+.fade-on-scroll {
+  opacity: 0.1;              /* Start slightly visible */
+  transform: translateY(20px); /* Same offset as fadeInUp from-state */
+}
+
+.fade-on-scroll.active {
+  /* Run the fadeInUp keyframe when element enters viewport */
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
 /* Shake animation for phone icon */
 @keyframes shake {
   0%, 100% {
@@ -262,27 +292,6 @@ body {
   animation: shake 1s ease-in-out infinite;
   transition: all 0.3s ease;
   transform: translateX(0);
-}
-
-/* Animation classes with delays */
-.fade-in-on-load {
-  animation: fadeInUp 1s ease-out forwards;
-  opacity: 0; /* Start invisible */
-}
-
-.fade-in-delay-1 {
-  animation: fadeInUp 1s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
-.fade-in-delay-2 {
-  animation: fadeInUp 1s ease-out 0.6s forwards;
-  opacity: 0;
-}
-
-.fade-in-delay-3 {
-  animation: fadeInUp 1s ease-out 0.9s forwards;
-  opacity: 0;
 }
 
 /* Premium Products Section Styles */
@@ -452,9 +461,15 @@ body {
   padding: 0 3rem;
 }
 
+@media (max-width: 1024px) {
+  .services-carousel-wrapper {
+    padding: 0 2rem;
+  }
+}
+
 @media (max-width: 640px) {
   .services-carousel-wrapper {
-    padding: 0 2.5rem;
+    padding: 0 1rem;
   }
 }
 
@@ -476,10 +491,15 @@ body {
   transition: all 0.3s ease;
 }
 
-.services-arrow:hover {
+.services-arrow:hover:not(:disabled) {
   background-color: var(--hero-text-dark);
   color: var(--hero-light-bg);
   transform: translateY(-50%) scale(1.1);
+}
+
+.services-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .services-arrow-prev {
@@ -490,7 +510,7 @@ body {
   right: -1.5rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .services-arrow-prev {
     left: -1rem;
   }
@@ -498,25 +518,25 @@ body {
   .services-arrow-next {
     right: -1rem;
   }
+}
+
+@media (max-width: 640px) {
+  .services-arrow-prev,
+  .services-arrow-prev-custom {
+    left: 0.5rem;
+  }
+  
+  .services-arrow-next,
+  .services-arrow-next-custom {
+    right: 0.5rem;
+  }
   
   .services-arrow {
     width: 2.5rem;
     height: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
-}
-
-/* Override Slick default styles */
-.services-carousel-wrapper .slick-slide {
-  padding: 0 0.75rem;
-}
-
-.services-carousel-wrapper .slick-list {
-  margin: 0 -0.75rem;
-}
-
-.services-carousel-wrapper .slick-prev,
-.services-carousel-wrapper .slick-next {
-  display: none !important;
 }
 
 /* Services CTA Button */
@@ -674,6 +694,12 @@ body {
   padding: 0 2rem;
 }
 
+@media (max-width: 1024px) {
+  .monthly-offers-carousel-wrapper {
+    padding: 0 1.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .monthly-offers-carousel-wrapper {
     padding: 0 1rem;
@@ -738,32 +764,55 @@ body {
   color: var(--hero-text-dark);
 }
 
-.monthly-offers-arrow:hover {
+.monthly-offers-arrow:hover:not(:disabled) {
   background-color: var(--hero-text-dark);
   color: white;
   transform: translateY(-50%) scale(1.1);
 }
 
-.monthly-offers-arrow-prev {
+.monthly-offers-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.monthly-offers-arrow-prev,
+.monthly-offers-arrow-prev-custom {
   left: -20px;
 }
 
-.monthly-offers-arrow-next {
+.monthly-offers-arrow-next,
+.monthly-offers-arrow-next-custom {
   right: -20px;
 }
 
-@media (max-width: 640px) {
-  .monthly-offers-arrow-prev {
-    left: -10px;
+@media (max-width: 1024px) {
+  .monthly-offers-arrow-prev,
+  .monthly-offers-arrow-prev-custom {
+    left: -15px;
   }
 
-  .monthly-offers-arrow-next {
-    right: -10px;
+  .monthly-offers-arrow-next,
+  .monthly-offers-arrow-next-custom {
+    right: -15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .monthly-offers-arrow-prev,
+  .monthly-offers-arrow-prev-custom {
+    left: 0.5rem;
+  }
+
+  .monthly-offers-arrow-next,
+  .monthly-offers-arrow-next-custom {
+    right: 0.5rem;
   }
 
   .monthly-offers-arrow {
     width: 35px;
     height: 35px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
 }
 

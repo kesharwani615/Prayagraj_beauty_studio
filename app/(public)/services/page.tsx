@@ -14,6 +14,7 @@ import service6 from "@/public/images/image7.png"
 import service7 from "@/public/images/eyebrow1.jpg"
 import service8 from "@/public/images/hairremoval1.jpg"
 import service9 from "@/public/images/image-2.png"
+import ScrollAnimationScript from '@/components/ScrollAnimationScript'
 
 interface Service {
   id: string
@@ -47,10 +48,10 @@ const ServicesPage = () => {
   return (
     <>
       <Navbar />
-      <main className="services-page bg-hero-light min-h-screen fade-in-on-load">
+      <main className="services-page bg-hero-light min-h-screen">
         {/* Breadcrumb */}
-        <div className="bg-hero-light border-b border-gray-200">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="bg-hero-light mt-[6rem] fade-on-scroll">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-4">
             <nav className="text-sm" aria-label="Breadcrumb">
               <ol className="flex items-center space-x-2">
                 <li>
@@ -74,7 +75,7 @@ const ServicesPage = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left: Images */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 fade-on-scroll">
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
                   <Image
                     src={bridal1}
@@ -96,7 +97,7 @@ const ServicesPage = () => {
               </div>
 
               {/* Right: Text Content */}
-              <div className="space-y-4">
+              <div className="space-y-4 fade-on-scroll">
                 <h1 className="services-page-title text-hero-text-dark">
                   The Place Of <span className="text-hero-accent">Beauty</span>
                 </h1>
@@ -132,7 +133,7 @@ const ServicesPage = () => {
                   {/* Services Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {categoryServices.map((service) => (
-                      <div key={service.id} className="service-card-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                      <div key={service.id} className="service-card-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-on-scroll">
                         {/* Service Image */}
                         <div className="relative aspect-[3/4] overflow-hidden">
                           <Image
@@ -145,7 +146,7 @@ const ServicesPage = () => {
                         </div>
 
                         {/* Service Info */}
-                        <div className="p-5 lg:p-6">
+                        <div className="p-5 lg:p-6 fade-on-scroll">
                           <h3 className="service-card-item-title mb-2">
                             {service.title}
                           </h3>
@@ -177,6 +178,7 @@ const ServicesPage = () => {
         </section>
       </main>
       <Footer />
+      <ScrollAnimationScript />
     </>
   )
 }

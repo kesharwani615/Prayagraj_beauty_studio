@@ -30,9 +30,9 @@ const Footer = () => {
           {/* Left Section - Logo, Slogan, Social Media */}
           <div className="footer-logo-section space-y-4">
             {/* Logo */}
-            <div className="footer-logo flex items-center gap-2">
-              <div className="relative">
-                <span className="footer-logo-a text-4xl lg:text-5xl font-bold relative z-10">Prayagraj Beauty Studio</span>
+            <div className="footer-logo flex items-center gap-2 fade-on-scroll">
+              <div className="relative ">
+                <span className="footer-logo-a text-4xl lg:text-5xl font-bold relative z-10 ">Prayagraj Beauty Studio</span>
                 {/* Decorative lines/leaves extending from A */}
                 <div className="absolute -left-3 top-1 w-6 h-12 opacity-50" aria-hidden="true">
                   <svg 
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
 
             {/* Slogan */}
-            <div className="footer-slogan space-y-1">
+            <div className="footer-slogan space-y-1 fade-on-scroll">
               <h3 className="footer-slogan-main text-lg lg:text-xl font-bold">
                 Beauty & More
               </h3>
