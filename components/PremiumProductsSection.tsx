@@ -16,7 +16,7 @@ const PremiumProductsSection = () => {
             
             {/* Left: Large Vertical Image */}
             <div className="premium-image-left relative order-2 lg:order-1">
-              <div className="relative aspect-[3/4] lg:aspect-[2/3] rounded-lg overflow-hidden">
+              <div className="relative aspect-[3/4] lg:aspect-[2/3] rounded-lg overflow-hidden fade-on-scroll">
                 <Image
                   src={facialTreatment2}
                   alt="Professional facial treatment at home - Beauty Services"
@@ -32,7 +32,7 @@ const PremiumProductsSection = () => {
             </div>
 
             {/* Right: Text Content and Bottom Image */}
-            <div className="premium-content-right order-1 lg:order-2 space-y-8 fade-in-on-load">
+            <div className="premium-content-right order-1 lg:order-2 space-y-8 fade-on-scroll">
               
               {/* Upper Right: Text Content */}
               <div className="premium-text-content space-y-6">
@@ -47,7 +47,7 @@ const PremiumProductsSection = () => {
                 {/* CTA Button */}
                 <Link
                   href="/book-appointment"
-                  className="premium-cta-button inline-flex items-center gap-3"
+                  className="premium-cta-button inline-flex items-center gap-3 fade-on-scroll"
                   aria-label="Book Appointment"
                 >
                   <svg 
@@ -69,7 +69,7 @@ const PremiumProductsSection = () => {
               </div>
 
               {/* Bottom Right: Horizontal Image */}
-              <div className="premium-image-bottom relative">
+              <div className="premium-image-bottom relative fade-on-scroll">
                 <div className="relative aspect-[4/3] lg:aspect-[16/10] rounded-lg overflow-hidden">
                   <Image
                     src={facialTreatment1}

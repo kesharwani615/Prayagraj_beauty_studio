@@ -50,7 +50,7 @@ const MonthlyOffersSection = () => {
 
   return (
     <section className="monthly-offers-section bg-hero-light py-16 lg:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 fade-on-scroll" >
         
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16 fade-in-on-load">
@@ -115,7 +115,7 @@ const MonthlyOffersSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
+        <div className="text-center fade-on-scroll">
           <Link
             href="/services"
             className="monthly-offers-cta-button inline-block fade-in-on-load"

@@ -7,7 +7,7 @@ import group from "@/public/images/Group.png"
 
 const HeroSection = () => {
     return (
-        <div className="hero-section relative border border-green-500 overflow-hidden">
+        <div className="hero-section relative  overflow-hidden">
             {/* Dark Top Section */}
             <div className="hero-section-content min-h-[70vh] py-12 lg:py-16  flex items-center">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,7 +81,7 @@ const HeroSection = () => {
             </div>
 
             {/* Light Bottom Section */}
-            <div className="hero-light ">
+            <div className="hero-light fade-on-scroll">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="w-full lg:w-1/2 flex justify-between py-3">
                             <div className=" flex flex-col items-center justify-center gap-2 ">
@@ -111,7 +111,7 @@ const HeroSection = () => {
                         </div>
                 </div>
             </div>
-            <div className="container border relative hidden lg:block right-[-5%] xl:right-[-70px]">
+            <div className="container relative hidden lg:block right-[-5%] xl:right-[-70px]">
             <div className="relative top-0">
             <div className="hero-oval-angle absolute bottom-0 right-[10%] w-[30rem] h-[37rem] border-2 border-[#ecd8bd]"
                                 style={

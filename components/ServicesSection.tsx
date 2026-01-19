@@ -65,7 +65,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-12 lg:mb-16 fade-in-on-load">
+        <div className="text-center mb-12 lg:mb-16 fade-on-scroll">
           <h2 className="services-title text-hero-text-dark mb-4">
             Our Services
           </h2>
@@ -75,7 +75,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Carousel */}
-        <div className="services-carousel-wrapper mb-12 relative">
+        <div className="services-carousel-wrapper mb-12 relative fade-on-scroll">
           <Carousel
             opts={{
               align: "start",
@@ -120,7 +120,7 @@ const ServicesSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
+        <div className="text-center fade-on-scroll">
           <Link
             href="/services"
             className="services-cta-button inline-block fade-in-on-load"
