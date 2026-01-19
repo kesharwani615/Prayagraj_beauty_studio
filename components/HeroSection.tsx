@@ -7,14 +7,14 @@ import group from "@/public/images/Group.png"
 
 const HeroSection = () => {
     return (
-        <div className="hero-section relative  overflow-hidden">
+        <div className="hero-section relative  overflow-hidden ">
             {/* Dark Top Section */}
-            <div className="hero-section-content min-h-[70vh] py-12 lg:py-16  flex items-center">
+            <div className="hero-section-content min-h-[70vh] py-12 lg:py-16  flex items-center fade-on-scroll">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12  overflow-hidden">
 
                         {/* Left: Text Content */}
-                        <div className="flex flex-col justify-center space-y-6 lg:space-y-8 fade-on-scroll">
+                        <div className="flex flex-col justify-center space-y-6 lg:space-y-8 ">
                             <h1 className="text-white text-4xl lg:text-6xl font-bold">
                                 Beauty Services<br/>
                                 Delivered to<br/>
@@ -111,9 +111,9 @@ const HeroSection = () => {
                         </div>
                 </div>
             </div>
-            <div className="container relative hidden lg:block right-[-5%] xl:right-[-70px]">
-            <div className="relative top-0">
-            <div className="hero-oval-angle absolute bottom-0 right-[10%] w-[30rem] h-[37rem] border-2 border-[#ecd8bd]"
+            <div className="container relative hidden lg:block right-[-5%] xl:right-[-70px] ">
+            <div className="relative top-0 ">
+            <div className="hero-oval-angle absolute bottom-0 right-[10%] w-[30rem] h-[37rem] border-2 border-[#ecd8bd] fade-on-scroll"
                                 style={
                                     {
                                      borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%",
@@ -128,7 +128,7 @@ const HeroSection = () => {
                             </div>
             <Image src={makeup3}
             alt="Gift"
-            className="absolute bottom-[-91px] right-0 w-[45rem] h-[45rem]  object-contain"/>      
+            className="absolute bottom-[-91px] right-0 w-[45rem] h-[45rem]  object-contain fade-on-scroll"/>      
         
             </div>
         </div>
