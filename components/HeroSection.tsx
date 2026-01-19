@@ -7,9 +7,9 @@ import group from "@/public/images/Group.png"
 
 const HeroSection = () => {
     return (
-        <div className="hero-section relative">
+        <div className="hero-section relative border border-green-500 overflow-hidden">
             {/* Dark Top Section */}
-            <div className="hero-section-content min-h-[70vh]  flex items-center">
+            <div className="hero-section-content min-h-[70vh] py-12 lg:py-16  flex items-center">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12  overflow-hidden">
 
@@ -60,7 +60,7 @@ const HeroSection = () => {
                         </div>
 
                         {/* Right: Decorative Area */}
-                        <div className="relative hidden lg:block">
+                        {/* <div className="relative hidden lg:block">
                             <div className="hero-oval-angle relative right-[-3rem] top-[9rem] w-[30rem] h-[37rem] border-2 border-[#ecd8bd]"
                                 style={
                                     {
@@ -68,13 +68,13 @@ const HeroSection = () => {
                                      boxShadow: "0 0 120px rgba(236,216,189,0.3),inset 0 0 60px rgba(236,216,189,0.2)"
                                     }
                             }>
-                                {/* Image INSIDE oval */}
+                               
                                 <Image src={makeup2}
                                     alt="Gift"
                                     className="absolute top-[12%] left-[12%] w-[40px] h-[40px] object-contain"/>
                             
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>
@@ -111,11 +111,26 @@ const HeroSection = () => {
                         </div>
                 </div>
             </div>
-            <div className=" container relative hidden lg:block right-[-70px] fade-in-on-load">
-
+            <div className="container border relative hidden lg:block right-[-5%] xl:right-[-70px] fade-in-on-load">
+            <div className="relative top-0">
+            <div className="hero-oval-angle absolute bottom-0 right-[10%] w-[30rem] h-[37rem] border-2 border-[#ecd8bd]"
+                                style={
+                                    {
+                                     borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%",
+                                     boxShadow: "0 0 120px rgba(236,216,189,0.3),inset 0 0 60px rgba(236,216,189,0.2)"
+                                    }
+                            }>
+                               
+                                <Image src={makeup2}
+                                    alt="Gift"
+                                    className="absolute top-[12%] left-[12%] w-[40px] h-[40px] object-contain"/>
+                            
+                            </div>
             <Image src={makeup3}
             alt="Gift"
             className="absolute bottom-[-91px] right-0 w-[45rem] h-[45rem]  object-contain"/>      
+        
+            </div>
         </div>
         </div>
     )
