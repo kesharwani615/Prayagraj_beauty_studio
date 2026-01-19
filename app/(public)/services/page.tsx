@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
@@ -14,6 +16,13 @@ import service6 from "@/public/images/image7.png"
 import service7 from "@/public/images/eyebrow1.jpg"
 import service8 from "@/public/images/hairremoval1.jpg"
 import service9 from "@/public/images/image-2.png"
+import wax1 from "@/public/images/wax1.jpg"
+import wax2 from "@/public/images/wax2.avif"
+import wax3 from "@/public/images/wax3.avif"
+import wax4 from "@/public/images/wax4.jpg"
+import threading1 from "@/public/images/threading1.avif"
+import wax5 from "@/public/images/wax5.jpg"
+import wax6 from "@/public/images/wax6.avif"
 import ScrollAnimationScript from '@/components/ScrollAnimationScript'
 
 interface Service {
@@ -24,7 +33,15 @@ interface Service {
   category: string
 }
 
-const services: Service[] = [
+// Helper function to extract numeric price value for sorting
+const getPriceValue = (price: string): number => {
+  return parseInt(price.replace(/[₹,]/g, ''), 10)
+}
+
+// Define category order
+const categoryOrder = ['Facial', 'Hair Removal', 'Hair Cut & Hair Care', 'Makeup Services', 'Manicure & Pedicure', 'Mehndi']
+
+const allServices: Service[] = [
   // Facial Treatments
   { id: '1', title: 'Classic facial ', price: '₹499', image: service1, category: 'Facial' },
   { id: '2', title: 'Deep cleansing/acne facial', price: '₹999', image: service2, category: 'Facial' },
@@ -34,16 +51,172 @@ const services: Service[] = [
   { id: '10', title: 'Calming/sensitive skin faical ', price: '₹2,499', image: service6, category: 'Facial' },
   
   // Hair Removal
-  { id: '7', title: 'Eyebrow Lamination', price: '₹999', image: service7, category: 'Hair Removal' },
+  { id: '7', title: 'Eyebrow Lamination', price: '₹29', image: threading1, category: 'Hair Removal' },
   { id: '6', title: 'Permanent Hair Removal - Full Body', price: '₹4,999', image: service8, category: 'Hair Removal' },
   
+  // Full Body Wax (Excluding Bikini & Hips)
+  { id: '11', title: 'Full Body Wax - Sugar Wax', price: '₹999', image: service8, category: 'Hair Removal' },
+  { id: '12', title: 'Full Body Wax - Chocolate Wax', price: '₹1,499', image: service8, category: 'Hair Removal' },
+  { id: '13', title: 'Full Body Wax - Rica Wax', price: '₹1,999', image: service8, category: 'Hair Removal' },
+  
+  // Full Legs Wax
+  { id: '14', title: 'Full Legs Wax - Sugar Wax', price: '₹399', image: wax1, category: 'Hair Removal' },
+  { id: '15', title: 'Full Legs Wax - Chocolate Wax', price: '₹599', image: wax5, category: 'Hair Removal' },
+  { id: '16', title: 'Full Legs Wax - Rica Wax', price: '₹699', image: wax6, category: 'Hair Removal' },
+  
+  // Bikini & Hips Wax
+  { id: '17', title: 'Bikini & Hips Wax - Rica Wax', price: '₹1,299', image: service8, category: 'Hair Removal' },
+  { id: '18', title: 'Bikini & Hips Wax - Been Wax', price: '₹1,499', image: service8, category: 'Hair Removal' },
+  
+  // Face Wax
+  { id: '19', title: 'Face Wax', price: '₹499', image: wax4, category: 'Hair Removal' },
+  
+  // Full Arms With U/A Half Legs Wax
+  { id: '20', title: 'Full Arms With U/A Half Legs Wax - Sugar Wax', price: '₹199', image: wax1, category: 'Hair Removal' },
+  { id: '21', title: 'Full Arms With U/A Half Legs Wax - Chocolate Wax', price: '₹299', image: wax2, category: 'Hair Removal' },
+  { id: '22', title: 'Full Arms With U/A Half Legs Wax - Rica Wax', price: '₹349', image: wax3, category: 'Hair Removal' },
+  
+  // Hair Cut & Hair Care
+  { id: '53', title: 'Hair Trimming', price: '₹149', image: service8, category: 'Hair Cut & Hair Care' },
+  { id: '54', title: 'Layer Cut / Step Cut', price: '₹249', image: service8, category: 'Hair Cut & Hair Care' },
+  { id: '55', title: 'Hair Wash & Blow Dry', price: '₹299', image: service8, category: 'Hair Cut & Hair Care' },
+  { id: '56', title: 'Hair Styling', price: '₹499', image: service8, category: 'Hair Cut & Hair Care' },
+  { id: '57', title: 'Bridal Bun / Juda', price: '₹699', image: service8, category: 'Hair Cut & Hair Care' },
+  { id: '58', title: 'Hair Straight / Curl', price: '₹999', image: service8, category: 'Hair Cut & Hair Care' },
+  
   // Makeup Services
-  { id: '8', title: 'Bridal Makeup', price: '₹3,999', image: service8, category: 'Makeup Services' },
-  { id: '9', title: 'Party Makeup', price: '₹1,999', image: service9, category: 'Makeup Services' },
+  { id: '23', title: 'Natural Makeup', price: '₹999', image: service9, category: 'Makeup Services' },
+  { id: '24', title: 'Party Makeup', price: '₹1,499', image: service9, category: 'Makeup Services' },
+  { id: '25', title: 'Matte Makeup', price: '₹1,999', image: service9, category: 'Makeup Services' },
+  { id: '26', title: 'HD Makeup', price: '₹2,499', image: service9, category: 'Makeup Services' },
+  { id: '27', title: 'Glam Makeup', price: '₹2,999', image: service9, category: 'Makeup Services' },
+  { id: '28', title: 'Smokey Makeup', price: '₹3,499', image: service9, category: 'Makeup Services' },
+  { id: '29', title: 'Reception Makeup', price: '₹4,999', image: service9, category: 'Makeup Services' },
+  { id: '30', title: 'Engagement Makeup', price: '₹5,999', image: service9, category: 'Makeup Services' },
+  { id: '31', title: 'Bridal Makeup', price: '₹9,999', image: service9, category: 'Makeup Services' },
+  { id: '32', title: 'Bridal HD Makeup', price: '₹12,999', image: service9, category: 'Makeup Services' },
+  { id: '33', title: 'Airbrush Makeup', price: '₹14,999', image: service9, category: 'Makeup Services' },
+  
+  // Manicure Services
+  { id: '34', title: 'Basic Manicure', price: '₹299', image: service9, category: 'Manicure & Pedicure' },
+  { id: '35', title: 'Clean-Up Manicure', price: '₹399', image: service9, category: 'Manicure & Pedicure' },
+  { id: '36', title: 'Express Manicure', price: '₹499', image: service9, category: 'Manicure & Pedicure' },
+  
+  // Pedicure Services
+  { id: '37', title: 'Basic Pedicure', price: '₹499', image: service9, category: 'Manicure & Pedicure' },
+  { id: '38', title: 'Clean-Up Pedicure', price: '₹599', image: service9, category: 'Manicure & Pedicure' },
+  { id: '39', title: 'Express Pedicure', price: '₹699', image: service9, category: 'Manicure & Pedicure' },
+  
+  // Mehndi Services
+  { id: '40', title: 'Minimal / Floral Mehndi', price: '₹500', image: service9, category: 'Mehndi' },
+  { id: '41', title: 'Guest Mehndi', price: '₹500', image: service9, category: 'Mehndi' },
+  { id: '42', title: 'Engagement / Wedding Guest Mehndi', price: '₹500', image: service9, category: 'Mehndi' },
+  { id: '43', title: 'Arabic Mehndi (Per Hand)', price: '₹400', image: service9, category: 'Mehndi' },
+  { id: '44', title: 'Arabic Mehndi (Per Hand) - Premium', price: '₹700', image: service9, category: 'Mehndi' },
+  { id: '45', title: 'Traditional Mehndi (Per Hand)', price: '₹1,000', image: service9, category: 'Mehndi' },
+  { id: '46', title: 'Arabic Bridal Mehndi', price: '₹3,000', image: service9, category: 'Mehndi' },
+  { id: '47', title: 'Full Hands (Front + Back)', price: '₹4,000', image: service9, category: 'Mehndi' },
+  { id: '48', title: 'Bridal Mehndi', price: '₹5,000', image: service9, category: 'Mehndi' },
+  { id: '49', title: 'Full Hands + Full Legs', price: '₹5,000', image: service9, category: 'Mehndi' },
+  { id: '50', title: 'Full Hands + Legs', price: '₹7,000', image: service9, category: 'Mehndi' },
+  { id: '51', title: 'Rajasthani / Traditional Bridal Mehndi', price: '₹7,000', image: service9, category: 'Mehndi' },
+  { id: '52', title: 'Premium Bridal Mehndi (Custom Design)', price: '₹9,999', image: service9, category: 'Mehndi' },
 ]
 
+// Sort services: maintain category order, sort by price within each category
+const services: Service[] = (() => {
+  // Group services by category
+  const groupedByCategory: Record<string, Service[]> = {}
+  allServices.forEach(service => {
+    if (!groupedByCategory[service.category]) {
+      groupedByCategory[service.category] = []
+    }
+    groupedByCategory[service.category].push(service)
+  })
+
+  // Sort within each category by price (lowest to highest)
+  Object.keys(groupedByCategory).forEach(category => {
+    groupedByCategory[category].sort((a, b) => getPriceValue(a.price) - getPriceValue(b.price))
+  })
+
+  // Combine in the defined category order
+  const sorted: Service[] = []
+  categoryOrder.forEach(category => {
+    if (groupedByCategory[category]) {
+      sorted.push(...groupedByCategory[category])
+    }
+  })
+
+  return sorted
+})()
+
 const ServicesPage = () => {
-  const categories = Array.from(new Set(services.map(s => s.category)))
+  const categories = categoryOrder.filter(cat => 
+    services.some(s => s.category === cat)
+  )
+  const [visibleCount, setVisibleCount] = useState<Record<string, number>>(() => {
+    const initial: Record<string, number> = {}
+    categories.forEach(category => {
+      initial[category] = 6
+    })
+    return initial
+  })
+
+  const handleShowMore = (category: string, totalCount: number) => {
+    setVisibleCount(prev => ({
+      ...prev,
+      [category]: totalCount // Show all items
+    }))
+  }
+
+  // Re-initialize observer for newly shown cards
+  useEffect(() => {
+    const initializeObserver = () => {
+      const elements = document.querySelectorAll('.fade-on-scroll:not(.active)')
+      
+      if (elements.length > 0) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('active')
+              } else {
+                entry.target.classList.remove('active')
+              }
+            })
+          },
+          {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px',
+          }
+        )
+
+        elements.forEach((el) => {
+          // Check if already in viewport when shown
+          const rect = el.getBoundingClientRect()
+          const isInViewport = rect.top < window.innerHeight && rect.bottom > 0
+          if (isInViewport) {
+            // Immediately add active class if already visible
+            el.classList.add('active')
+          } else {
+            // Observe for when it enters viewport
+            observer.observe(el)
+          }
+        })
+
+        return () => {
+          elements.forEach((el) => observer.unobserve(el))
+        }
+      }
+    }
+
+    // Small delay to ensure DOM is updated after state change
+    const timeoutId = setTimeout(() => {
+      initializeObserver()
+    }, 100)
+
+    return () => clearTimeout(timeoutId)
+  }, [visibleCount])
 
   return (
     <>
@@ -114,6 +287,8 @@ const ServicesPage = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             {categories.map((category) => {
               const categoryServices = services.filter(s => s.category === category)
+              const visibleServices = categoryServices.slice(0, visibleCount[category] || 6)
+              const hasMore = categoryServices.length > (visibleCount[category] || 6)
               
               return (
                 <div key={category} className="mb-16 lg:mb-20">
@@ -122,20 +297,14 @@ const ServicesPage = () => {
                     <h2 className="services-category-title text-hero-text-dark">
                       {category}
                     </h2>
-                    {/* <Link
-                      href={`/services?category=${encodeURIComponent(category)}`}
-                      className="services-explore-button hidden md:inline-block"
-                    >
-                      Explore all
-                    </Link> */}
                   </div>
 
                   {/* Services Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {categoryServices.map((service) => (
-                      <div key={service.id} className="service-card-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-on-scroll">
+                    {visibleServices.map((service) => (
+                      <div key={service.id} className="service-card-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-on-scroll flex flex-col h-full">
                         {/* Service Image */}
-                        <div className="relative aspect-[3/4] overflow-hidden">
+                        <div className="relative aspect-[3/4] overflow-hidden flex-shrink-0">
                           <Image
                             src={service.image}
                             alt={service.title}
@@ -146,16 +315,16 @@ const ServicesPage = () => {
                         </div>
 
                         {/* Service Info */}
-                        <div className="p-5 lg:p-6 fade-on-scroll">
-                          <h3 className="service-card-item-title mb-2">
+                        <div className="p-5 lg:p-6 flex flex-col flex-grow">
+                          <h3 className="service-card-item-title mb-2 line-clamp-2 min-h-[3rem]">
                             {service.title}
                           </h3>
-                          <p className="service-card-item-price  font-semibold text-lg mb-4">
+                          <p className="service-card-item-price font-semibold text-lg mb-4">
                             {service.price}
                           </p>
                           <Link
                             href={`/services/${service.id}`}
-                            className="service-book-button inline-flex items-center gap-2 text-[#2d2d2d] hover:text-hero-accent transition-colors duration-200 font-medium"
+                            className="service-book-button inline-flex items-center gap-2 text-[#2d2d2d] hover:text-hero-accent transition-colors duration-200 font-medium mt-auto"
                           >
                             Book Now
                             <svg 
@@ -171,6 +340,26 @@ const ServicesPage = () => {
                       </div>
                     ))}
                   </div>
+
+                  {/* Show More Button */}
+                  {hasMore && (
+                    <div className="text-center mt-8">
+                      <button
+                        onClick={() => handleShowMore(category, categoryServices.length)}
+                        className="services-explore-button inline-flex items-center gap-2 px-6 py-3 bg-hero-text-dark text-white rounded-lg hover:bg-[#1a1a1a] transition-all duration-300 font-medium"
+                      >
+                        Show More ({categoryServices.length - (visibleCount[category] || 6)} more)
+                        <svg 
+                          className="w-5 h-5" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
+                  )}
                 </div>
               )
             })}

@@ -14,6 +14,11 @@ import {
 import offer1 from "@/public/images/image5.png"
 import offer2 from "@/public/images/image6.png"
 import offer3 from "@/public/images/image7.png"
+import offer4 from "@/public/images/bridal1.jpg"
+import offer5 from "@/public/images/image8.png"
+import offer6 from "@/public/images/image9.png"
+import offer7 from "@/public/images/image3.png"
+import offer8 from "@/public/images/image4.png"
 
 interface Offer {
   id: number
@@ -44,6 +49,41 @@ const MonthlyOffersSection = () => {
       description: 'Package: 3 Full Body Sessions + 6 Laser Hair Removal Sessions',
       price: '₹7,999',
       image: offer3,
+    },
+    {
+      id: 4,
+      title: 'Bridal Makeup Package',
+      description: 'Flat 15% OFF',
+      price: 'Special Offer',
+      image: offer4,
+    },
+    {
+      id: 5,
+      title: 'HD / Airbrush Makeup',
+      description: '₹1,000 OFF',
+      price: 'Special Offer',
+      image: offer5,
+    },
+    {
+      id: 6,
+      title: 'Makeup + Hairstyle Combo',
+      description: 'Save ₹2,000',
+      price: 'Special Offer',
+      image: offer6,
+    },
+    {
+      id: 7,
+      title: 'Facial + Wax Combo',
+      description: 'Flat 10% OFF',
+      price: 'Special Offer',
+      image: offer7,
+    },
+    {
+      id: 8,
+      title: 'Pre-Bridal Package',
+      description: 'Save up to ₹3,000',
+      price: 'Special Offer',
+      image: offer8,
     },
   ]
 
@@ -102,7 +142,13 @@ const MonthlyOffersSection = () => {
 
                       {/* Offer Price */}
                       <div className="monthly-offer-price text-hero-accent font-semibold text-lg">
-                        {offer.price} <span className="text-sm text-hero-text-dark/60 font-normal">| session</span>
+                        {offer.price === 'Special Offer' ? (
+                          <span className="text-hero-accent">{offer.description}</span>
+                        ) : (
+                          <>
+                            {offer.price} <span className="text-sm text-hero-text-dark/60 font-normal">| session</span>
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>
