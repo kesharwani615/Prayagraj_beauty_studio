@@ -10,11 +10,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import service1 from "@/public/images/image5.png"
-import service2 from "@/public/images/image6.png"
-import service3 from "@/public/images/image7.png"
-import service4 from "@/public/images/image8.png"
-import service5 from "@/public/images/image9.png"
+import service1 from "@/public/images/image5.webp"
+import service2 from "@/public/images/image6.webp"
+import service3 from "@/public/images/image7.webp"
+import service4 from "@/public/images/image8.webp"
+import service5 from "@/public/images/image9.webp"
 
 interface Service {
   id: number

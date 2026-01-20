@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import woman1 from "@/public/images/female-model-wedding-bridal-makeup.jpg"
-import woman2 from "@/public/images/model-light-makeup-holding-spring-flowers.jpg"
+import woman1 from "@/public/images/female-model-wedding-bridal-makeup.webp"
+import woman2 from "@/public/images/model-light-makeup-holding-spring-flowers.webp"
 
 const AboutUsSection = () => {
   const [activeTreatment, setActiveTreatment] = useState('classic-gold')

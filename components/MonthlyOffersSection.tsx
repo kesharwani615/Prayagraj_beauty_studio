@@ -11,14 +11,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import offer1 from "@/public/images/image5.png"
-import offer2 from "@/public/images/image6.png"
-import offer3 from "@/public/images/image7.png"
-import offer4 from "@/public/images/bridal1.jpg"
-import offer5 from "@/public/images/image8.png"
-import offer6 from "@/public/images/image9.png"
-import offer7 from "@/public/images/image3.png"
-import offer8 from "@/public/images/image4.png"
+import offer1 from "@/public/images/image5.webp"
+import offer2 from "@/public/images/image6.webp"
+import offer3 from "@/public/images/image7.webp"
+import offer4 from "@/public/images/bridal1.webp"
+import offer5 from "@/public/images/image8.webp"
+import offer6 from "@/public/images/image9.webp"
+import offer7 from "@/public/images/image3.webp"
+import offer8 from "@/public/images/image4.webp"
 
 interface Offer {
   id: number

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import facialTreatment1 from "@/public/images/pexels4.jpg"
-import facialTreatment2 from "@/public/images/pexels1.jpg"
+import facialTreatment1 from "@/public/images/pexels4.webp"
+import facialTreatment2 from "@/public/images/pexels1.webp"
 
 const PremiumProductsSection = () => {
   return (

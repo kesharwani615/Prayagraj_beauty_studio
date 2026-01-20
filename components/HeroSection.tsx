@@ -3,13 +3,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import makeup1 from "@/public/images/now-word-bold-text-style.png"
-import makeup2 from "@/public/images/image-2.png"
-import makeup3 from "@/public/images/beautiful-woman.png"
-import group from "@/public/images/Group.png"
+import makeup1 from "@/public/images/now-word-bold-text-style.webp"
+import makeup2 from "@/public/images/image-2.webp"
+import makeup3 from "@/public/images/beautiful-woman.webp"
+import group from "@/public/images/Group.webp"
 
 const HeroSection = () => {
-    const videos = ["/Video/video1.mp4", "/Video/video2.mp4", "/Video/video3.mp4"]
+    const videos = ["/Video/video1.webm", "/Video/video2.webm", "/Video/video3.webm"]
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
     const videoRef = useRef<HTMLVideoElement>(null)
 
