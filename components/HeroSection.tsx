@@ -16,7 +16,7 @@ const HeroSection = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length)
-        }, 5000) // Change video every 5 seconds
+        }, 7000) // Change video every 5 seconds
 
         return () => clearInterval(interval)
     }, [videos.length])
@@ -33,12 +33,12 @@ const HeroSection = () => {
     return (
         <div className="hero-section relative overflow-hidden">
             {/* Dark Top Section */}
-            <div className="relative hero-section-content min-h-[70vh] py-12 lg:py-16 flex items-center fade-on-scroll">
+            <div className="relative hero-section-content min-h-screen lg:min-h-[70vh] py-12 lg:py-16 flex items-center fade-on-scroll">
                 {/* Mobile/Tablet Background Video */}
                 <video
                     ref={videoRef}
                     key={currentVideoIndex}
-                    className="absolute inset-0 w-full h-full object-cover opacity-40 block lg:hidden transition-opacity duration-1000"
+                    className="absolute inset-0 w-full h-full object-cover object-center opacity-40 block lg:hidden transition-opacity duration-1000"
                     autoPlay
                     muted
                     loop
@@ -50,14 +50,14 @@ const HeroSection = () => {
                     <div className="relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-12 overflow-hidden">
 
                         {/* Left: Text Content */}
-                        <div className="flex flex-col justify-center space-y-6 lg:space-y-8 ">
-                            <h1 className="text-white text-4xl lg:text-6xl font-bold">
+                        <div className="flex flex-col justify-center space-y-10 lg:space-y-8 ">
+                            <h1 className="text-white text-3xl lg:text-5xl font-bold">
                                 Beauty Services<br/>
                                 Delivered to<br/>
                                 <span className="text-hero-accent">Your Home</span>
                             </h1>
 
-                            <p className=" text-white/90 text-lg lg:text-xl ">
+                            <p className=" text-white/90 text-base lg:text-xl ">
                                 Premium beauty treatments and skincare services at your doorstep. Experience luxury beauty care in the comfort of your home.
                             </p>
 

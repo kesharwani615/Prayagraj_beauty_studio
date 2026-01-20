@@ -174,7 +174,7 @@ body {
 /* hero-section utility classes */
 .hero-section {
   min-height: 100vh;
-  padding-top: 5rem; /* Space for fixed navbar */
+  /* padding-top: 5rem;  Space for fixed navbar */
 }
 
 .hero-section-content {
