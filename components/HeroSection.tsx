@@ -1,18 +1,53 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useState, useEffect, useRef } from "react"
 import makeup1 from "@/public/images/now-word-bold-text-style.png"
 import makeup2 from "@/public/images/image-2.png"
 import makeup3 from "@/public/images/beautiful-woman.png"
 import group from "@/public/images/Group.png"
 
-
 const HeroSection = () => {
+    const videos = ["/Video/video1.mp4", "/Video/video2.mp4", "/Video/video3.mp4"]
+    const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+    const videoRef = useRef<HTMLVideoElement>(null)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length)
+        }, 5000) // Change video every 5 seconds
+
+        return () => clearInterval(interval)
+    }, [videos.length])
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.load()
+            videoRef.current.play().catch((error) => {
+                console.log("Video autoplay failed:", error)
+            })
+        }
+    }, [currentVideoIndex])
+
     return (
-        <div className="hero-section relative  overflow-hidden ">
+        <div className="hero-section relative overflow-hidden">
             {/* Dark Top Section */}
-            <div className="hero-section-content min-h-[70vh] py-12 lg:py-16  flex items-center fade-on-scroll">
+            <div className="relative hero-section-content min-h-[70vh] py-12 lg:py-16 flex items-center fade-on-scroll">
+                {/* Mobile/Tablet Background Video */}
+                <video
+                    ref={videoRef}
+                    key={currentVideoIndex}
+                    className="absolute inset-0 w-full h-full object-cover opacity-40 block lg:hidden transition-opacity duration-1000"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    src={videos[currentVideoIndex]}
+                />
+
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12  overflow-hidden">
+                    <div className="relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-12 overflow-hidden">
 
                         {/* Left: Text Content */}
                         <div className="flex flex-col justify-center space-y-6 lg:space-y-8 ">
