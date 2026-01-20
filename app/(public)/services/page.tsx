@@ -22,7 +22,18 @@ import wax4 from "@/public/images/wax4.webp"
 import threading1 from "@/public/images/threading1.webp"
 import wax5 from "@/public/images/wax5.webp"
 import wax6 from "@/public/images/wax6.webp"
+import wax7 from "@/public/images/fullbodywax1.webp"
+import wax8 from "@/public/images/ricawax1.webp"
+import wax9 from "@/public/images/chocalatewax.webp"
+import wax10 from "@/public/images/bikini&hipwax.jpg"
+import wax11 from "@/public/images/ricawax2.webp"
 import ScrollAnimationScript from '@/components/ScrollAnimationScript'
+import haircut1 from "@/public/images/haircut1.webp"
+import haircut2 from "@/public/images/haircut2.webp"
+import haircut3 from "@/public/images/haircut3.webp"
+import haircut4 from "@/public/images/haircut4.webp"
+import haircut5 from "@/public/images/haircut5.avif"
+import haircut6 from "@/public/images/haircut6.avif"
 
 interface Service {
   id: string
@@ -38,7 +49,7 @@ const getPriceValue = (price: string): number => {
 }
 
 // Define category order
-const categoryOrder = ['Facial', 'Hair Removal', 'Hair Cut & Hair Care', 'Makeup Services', 'Manicure & Pedicure', 'Mehndi']
+const categoryOrder = ['Facial', 'Hair Removal', 'Hair Cut & Hair Care', 'Makeup', 'Manicure & Pedicure', 'Mehndi']
 
 const allServices: Service[] = [
   // Facial Treatments
@@ -51,12 +62,11 @@ const allServices: Service[] = [
   
   // Hair Removal
   { id: '7', title: 'Eyebrow Lamination', price: '₹29', image: threading1, category: 'Hair Removal' },
-  { id: '6', title: 'Permanent Hair Removal - Full Body', price: '₹4,999', image: service8, category: 'Hair Removal' },
   
   // Full Body Wax (Excluding Bikini & Hips)
-  { id: '11', title: 'Full Body Wax - Sugar Wax', price: '₹999', image: service8, category: 'Hair Removal' },
-  { id: '12', title: 'Full Body Wax - Chocolate Wax', price: '₹1,499', image: service8, category: 'Hair Removal' },
-  { id: '13', title: 'Full Body Wax - Rica Wax', price: '₹1,999', image: service8, category: 'Hair Removal' },
+  { id: '11', title: 'Full Body Wax - Sugar Wax', price: '₹999', image: wax7, category: 'Hair Removal' },
+  { id: '12', title: 'Full Body Wax - Chocolate Wax', price: '₹1,499', image: wax9, category: 'Hair Removal' },
+  { id: '13', title: 'Full Body Wax - Rica Wax', price: '₹1,999', image: wax11, category: 'Hair Removal' },
   
   // Full Legs Wax
   { id: '14', title: 'Full Legs Wax - Sugar Wax', price: '₹399', image: wax1, category: 'Hair Removal' },
@@ -64,8 +74,8 @@ const allServices: Service[] = [
   { id: '16', title: 'Full Legs Wax - Rica Wax', price: '₹699', image: wax6, category: 'Hair Removal' },
   
   // Bikini & Hips Wax
-  { id: '17', title: 'Bikini & Hips Wax - Rica Wax', price: '₹1,299', image: service8, category: 'Hair Removal' },
-  { id: '18', title: 'Bikini & Hips Wax - Been Wax', price: '₹1,499', image: service8, category: 'Hair Removal' },
+  { id: '17', title: 'Bikini & Hips Wax - Rica Wax', price: '₹1,299', image: wax8, category: 'Hair Removal' },
+  { id: '18', title: 'Bikini & Hips Wax - Been Wax', price: '₹1,499', image: wax10, category: 'Hair Removal' },
   
   // Face Wax
   { id: '19', title: 'Face Wax', price: '₹499', image: wax4, category: 'Hair Removal' },
@@ -76,25 +86,25 @@ const allServices: Service[] = [
   { id: '22', title: 'Full Arms With U/A Half Legs Wax - Rica Wax', price: '₹349', image: wax3, category: 'Hair Removal' },
   
   // Hair Cut & Hair Care
-  { id: '53', title: 'Hair Trimming', price: '₹149', image: service8, category: 'Hair Cut & Hair Care' },
-  { id: '54', title: 'Layer Cut / Step Cut', price: '₹249', image: service8, category: 'Hair Cut & Hair Care' },
-  { id: '55', title: 'Hair Wash & Blow Dry', price: '₹299', image: service8, category: 'Hair Cut & Hair Care' },
-  { id: '56', title: 'Hair Styling', price: '₹499', image: service8, category: 'Hair Cut & Hair Care' },
-  { id: '57', title: 'Bridal Bun / Juda', price: '₹699', image: service8, category: 'Hair Cut & Hair Care' },
-  { id: '58', title: 'Hair Straight / Curl', price: '₹999', image: service8, category: 'Hair Cut & Hair Care' },
+  { id: '53', title: 'Hair Trimming', price: '₹149', image: haircut1, category: 'Hair Cut & Hair Care' },
+  { id: '54', title: 'Layer Cut / Step Cut', price: '₹249', image: haircut4, category: 'Hair Cut & Hair Care' },
+  { id: '55', title: 'Hair Wash & Blow Dry', price: '₹299', image: haircut2, category: 'Hair Cut & Hair Care' },
+  { id: '56', title: 'Hair Styling', price: '₹499', image: haircut5, category: 'Hair Cut & Hair Care' },
+  { id: '57', title: 'Bridal Bun / Juda', price: '₹699', image: haircut6, category: 'Hair Cut & Hair Care' },
+  { id: '58', title: 'Hair Straight / Curl', price: '₹999', image: haircut3, category: 'Hair Cut & Hair Care' },
   
-  // Makeup Services
-  { id: '23', title: 'Natural Makeup', price: '₹999', image: service9, category: 'Makeup Services' },
-  { id: '24', title: 'Party Makeup', price: '₹1,499', image: service9, category: 'Makeup Services' },
-  { id: '25', title: 'Matte Makeup', price: '₹1,999', image: service9, category: 'Makeup Services' },
-  { id: '26', title: 'HD Makeup', price: '₹2,499', image: service9, category: 'Makeup Services' },
-  { id: '27', title: 'Glam Makeup', price: '₹2,999', image: service9, category: 'Makeup Services' },
-  { id: '28', title: 'Smokey Makeup', price: '₹3,499', image: service9, category: 'Makeup Services' },
-  { id: '29', title: 'Reception Makeup', price: '₹4,999', image: service9, category: 'Makeup Services' },
-  { id: '30', title: 'Engagement Makeup', price: '₹5,999', image: service9, category: 'Makeup Services' },
-  { id: '31', title: 'Bridal Makeup', price: '₹9,999', image: service9, category: 'Makeup Services' },
-  { id: '32', title: 'Bridal HD Makeup', price: '₹12,999', image: service9, category: 'Makeup Services' },
-  { id: '33', title: 'Airbrush Makeup', price: '₹14,999', image: service9, category: 'Makeup Services' },
+  // Makeup
+  { id: '23', title: 'Natural Makeup', price: '₹999', image: service9, category: 'Makeup' },
+  { id: '24', title: 'Party Makeup', price: '₹1,499', image: service9, category: 'Makeup' },
+  { id: '25', title: 'Matte Makeup', price: '₹1,999', image: service9, category: 'Makeup' },
+  { id: '26', title: 'HD Makeup', price: '₹2,499', image: service9, category: 'Makeup' },
+  { id: '27', title: 'Glam Makeup', price: '₹2,999', image: service9, category: 'Makeup' },
+  { id: '28', title: 'Smokey Makeup', price: '₹3,499', image: service9, category: 'Makeup' },
+  { id: '29', title: 'Reception Makeup', price: '₹4,999', image: service9, category: 'Makeup' },
+  { id: '30', title: 'Engagement Makeup', price: '₹5,999', image: service9, category: 'Makeup' },
+  { id: '31', title: 'Bridal Makeup', price: '₹9,999', image: service9, category: 'Makeup' },
+  { id: '32', title: 'Bridal HD Makeup', price: '₹12,999', image: service9, category: 'Makeup' },
+  { id: '33', title: 'Airbrush Makeup', price: '₹14,999', image: service9, category: 'Makeup' },
   
   // Manicure Services
   { id: '34', title: 'Basic Manicure', price: '₹299', image: service9, category: 'Manicure & Pedicure' },
@@ -293,7 +303,7 @@ const ServicesPage = () => {
                 <div key={category} className="mb-16 lg:mb-20">
                   {/* Category Header */}
                   <div className="flex items-center justify-between mb-8">
-                    <h2 className="services-category-title text-hero-text-dark">
+                    <h2 className="services-category-title text-hero-text-dark opacity-100">
                       {category}
                     </h2>
                   </div>
