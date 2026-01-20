@@ -4,15 +4,15 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import service1 from "@/public/images/image5.png"
-import service2 from "@/public/images/image6.png"
-import service3 from "@/public/images/image7.png"
-import service4 from "@/public/images/image8.png"
-import service5 from "@/public/images/image9.png"
-import service6 from "@/public/images/image3.png"
-import service7 from "@/public/images/image4.png"
-import service8 from "@/public/images/image-1.png"
-import service9 from "@/public/images/image-2.png"
+import service1 from "@/public/images/image5.webp"
+import service2 from "@/public/images/image6.webp"
+import service3 from "@/public/images/image7.webp"
+import service4 from "@/public/images/image8.webp"
+import service5 from "@/public/images/image9.webp"
+import service6 from "@/public/images/image3.webp"
+import service7 from "@/public/images/image4.webp"
+import service8 from "@/public/images/image-1.webp"
+import service9 from "@/public/images/image-2.webp"
 
 interface ServiceDetail {
   id: string
