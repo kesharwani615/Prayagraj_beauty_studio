@@ -46,7 +46,7 @@ const HeroSection = () => {
                     src={videos[currentVideoIndex]}
                 />
 
-                <div className="container mx-auto px- sm:px-6 lg:px-8">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-12 overflow-hidden">
 
                         {/* Left: Text Content */}
@@ -124,6 +124,7 @@ const HeroSection = () => {
 
             {/* Light Bottom Section */}
             <div className="hero-light">
+                {/* container mobile padding size padding appied on media query */}
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="w-full lg:w-1/2 flex justify-between py-3 fade-on-scroll">
                             <div className=" flex flex-col items-center justify-center gap-2 ">

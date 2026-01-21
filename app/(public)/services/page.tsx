@@ -34,6 +34,17 @@ import haircut3 from "@/public/images/haircut3.webp"
 import haircut4 from "@/public/images/haircut4.webp"
 import haircut5 from "@/public/images/haircut5.avif"
 import haircut6 from "@/public/images/haircut6.avif"
+import makeup1 from "@/public/images/makeup1.jpg"
+import makeup2 from "@/public/images/makeup2.avif"
+import makeup3 from "@/public/images/makeup3.webp"
+import makeup4 from "@/public/images/makeup4.jpg"
+import makeup5 from "@/public/images/makeup5.webp"
+import makeup6 from "@/public/images/makeup6.avif"
+import makeup9 from "@/public/images/makeup9.avif"
+import makeup10 from "@/public/images/makeup10.avif"
+import makeup11 from "@/public/images/makeup11.jpg"
+import makeup12 from "@/public/images/makeup12.avif"
+import makeup13 from "@/public/images/makeup13.jpg"
 
 interface Service {
   id: string
@@ -94,17 +105,17 @@ const allServices: Service[] = [
   { id: '58', title: 'Hair Straight / Curl', price: '₹999', image: haircut3, category: 'Hair Cut & Hair Care' },
   
   // Makeup
-  { id: '23', title: 'Natural Makeup', price: '₹999', image: service9, category: 'Makeup' },
-  { id: '24', title: 'Party Makeup', price: '₹1,499', image: service9, category: 'Makeup' },
-  { id: '25', title: 'Matte Makeup', price: '₹1,999', image: service9, category: 'Makeup' },
-  { id: '26', title: 'HD Makeup', price: '₹2,499', image: service9, category: 'Makeup' },
-  { id: '27', title: 'Glam Makeup', price: '₹2,999', image: service9, category: 'Makeup' },
-  { id: '28', title: 'Smokey Makeup', price: '₹3,499', image: service9, category: 'Makeup' },
-  { id: '29', title: 'Reception Makeup', price: '₹4,999', image: service9, category: 'Makeup' },
-  { id: '30', title: 'Engagement Makeup', price: '₹5,999', image: service9, category: 'Makeup' },
-  { id: '31', title: 'Bridal Makeup', price: '₹9,999', image: service9, category: 'Makeup' },
-  { id: '32', title: 'Bridal HD Makeup', price: '₹12,999', image: service9, category: 'Makeup' },
-  { id: '33', title: 'Airbrush Makeup', price: '₹14,999', image: service9, category: 'Makeup' },
+  { id: '23', title: 'Natural Makeup', price: '₹999', image: makeup11, category: 'Makeup' },
+  { id: '24', title: 'Party Makeup', price: '₹1,499', image: makeup12, category: 'Makeup' },
+  { id: '25', title: 'Matte Makeup', price: '₹1,999', image: makeup10, category: 'Makeup' },
+  { id: '26', title: 'HD Makeup', price: '₹2,499', image: makeup9, category: 'Makeup' },
+  { id: '27', title: 'Glam Makeup', price: '₹2,999', image: makeup4, category: 'Makeup' },
+  { id: '28', title: 'Smokey Makeup', price: '₹3,499', image: makeup6, category: 'Makeup' },
+  { id: '29', title: 'Reception Makeup', price: '₹4,999', image: makeup1, category: 'Makeup' },
+  { id: '30', title: 'Engagement Makeup', price: '₹5,999', image: makeup13, category: 'Makeup' },
+  { id: '31', title: 'Bridal Makeup', price: '₹9,999', image: makeup3, category: 'Makeup' },
+  { id: '32', title: 'Bridal HD Makeup', price: '₹12,999', image: makeup5, category: 'Makeup' },
+  { id: '33', title: 'Airbrush Makeup', price: '₹14,999', image: makeup2, category: 'Makeup' },
   
   // Manicure Services
   { id: '34', title: 'Basic Manicure', price: '₹299', image: service9, category: 'Manicure & Pedicure' },
