@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+import LazyImage from "@/components/LazyImage"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 import makeup1 from "@/public/images/now-word-bold-text-style.webp"
@@ -80,10 +80,12 @@ const HeroSection = () => {
   hover:bg-white/15">
   {/* Icon Circle */}
   <div className="w-[6rem] h-[rem] flex items-center justify-center bg-white/20 rounded-full shrink-0 ">
-    <Image 
+    <LazyImage 
       src={makeup1}
       alt="Gift"
       className="w-full h-full  object-contain rotate-slow rounded-full"
+      width={96}
+      height={96}
     />
   </div>
   
@@ -129,25 +131,31 @@ const HeroSection = () => {
                      <div className="w-full lg:w-1/2 flex justify-between py-3 fade-on-scroll">
                             <div className=" flex flex-col items-center justify-center gap-2 ">
                                 <div className="h-[50px] w-[50px]">
-                                <Image src={group}
+                                <LazyImage src={group}
                                 alt="Premium Products"
-                                className="w-full h-full object-contain"/>
+                                className="w-full h-full object-contain"
+                                width={50}
+                                height={50}/>
                                 </div>
                                 <h3 className="text-[#2d2d2d] font-semibold ">Premium Products</h3>
                             </div>
                             <div className=" flex flex-col items-center justify-center gap-2">
                                 <div className="h-[50px] w-[50px]">
-                                <Image src={group}
+                                <LazyImage src={group}
                                 alt="Expert Staff"
-                                className="w-full h-full object-contain"/>
+                                className="w-full h-full object-contain"
+                                width={50}
+                                height={50}/>
                                 </div>
                                 <h3 className="text-[#2d2d2d] font-semibold">Expert Staff</h3>
                             </div>
                             <div className=" flex flex-col items-center justify-center gap-2">
                                 <div className="h-[50px] w-[50px]">
-                                <Image src={group}
+                                <LazyImage src={group}
                                 alt="Home Service"
-                                className="w-full h-full object-contain"/>
+                                className="w-full h-full object-contain"
+                                width={50}
+                                height={50}/>
                                 </div>
                                 <h3 className="text-[#2d2d2d] font-semibold">Home Service</h3>
                             </div>
@@ -164,14 +172,18 @@ const HeroSection = () => {
                                     }
                             }>
                                
-                                <Image src={makeup2}
+                                <LazyImage src={makeup2}
                                     alt="Gift"
-                                    className="absolute top-[12%] left-[12%] w-[40px] h-[40px] object-contain"/>
+                                    className="absolute top-[12%] left-[12%] w-[40px] h-[40px] object-contain"
+                                    width={40}
+                                    height={40}/>
                             
                             </div>
-            <Image src={makeup3}
+            <LazyImage src={makeup3}
             alt="Gift"
-            className="absolute bottom-[-91px] right-0 w-[45rem] h-[45rem]  object-contain fade-on-scroll"/>      
+            className="absolute bottom-[-91px] right-0 w-[45rem] h-[45rem]  object-contain fade-on-scroll"
+            width={720}
+            height={720}/>      
         
             </div>
         </div>

@@ -95,8 +95,8 @@ const Navbar: React.FC = () => {
               <Link href="/services" className="navbar-link tracking-wide whitespace-nowrap">
                 Services
               </Link>
-              <Link href="/pricing" className="navbar-link tracking-wide whitespace-nowrap">
-                Pricing
+              <Link href="/privacy-policy" className="navbar-link tracking-wide whitespace-nowrap">
+                Privacy Policy
               </Link>
               <Link href="/contact" className="navbar-link tracking-wide whitespace-nowrap">
                 Contact

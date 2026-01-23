@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import LazyImage from '@/components/LazyImage'
 import { StaticImageData } from 'next/image'
 import {
   Carousel,
@@ -11,14 +11,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import offer1 from "@/public/images/image5.webp"
-import offer2 from "@/public/images/image6.webp"
-import offer3 from "@/public/images/image7.webp"
-import offer4 from "@/public/images/bridal1.webp"
-import offer5 from "@/public/images/image8.webp"
-import offer6 from "@/public/images/image9.webp"
-import offer7 from "@/public/images/image3.webp"
-import offer8 from "@/public/images/image4.webp"
+import bridalMakeup from "@/public/images/makeup3.webp"
+import hdMakeup from "@/public/images/makeup5.webp"
+import makeupHairstyle from "@/public/images/haircut5.avif"
+import facialWax from "@/public/images/facial1.webp"
+import preBridal from "@/public/images/image7.webp"
 
 interface Offer {
   id: number
@@ -31,59 +28,39 @@ interface Offer {
 const MonthlyOffersSection = () => {
   const offers: Offer[] = [
     {
-      id: 1,
-      title: 'Eyebrow Lamination',
-      price: '₹999',
-      image: offer1,
-    },
-    {
-      id: 2,
-      title: 'Permanent Hair Removal – Smart Package',
-      description: 'Underarms, Full Bikini, Full Legs',
-      price: '₹4,999',
-      image: offer2,
-    },
-    {
-      id: 3,
-      title: 'Progressive Permanent Hair Removal',
-      description: 'Package: 3 Full Body Sessions + 6 Laser Hair Removal Sessions',
-      price: '₹7,999',
-      image: offer3,
-    },
-    {
       id: 4,
       title: 'Bridal Makeup Package',
       description: 'Flat 15% OFF',
       price: 'Special Offer',
-      image: offer4,
+      image: bridalMakeup,
     },
     {
       id: 5,
       title: 'HD / Airbrush Makeup',
       description: '₹1,000 OFF',
       price: 'Special Offer',
-      image: offer5,
+      image: hdMakeup,
     },
     {
       id: 6,
       title: 'Makeup + Hairstyle Combo',
       description: 'Save ₹2,000',
       price: 'Special Offer',
-      image: offer6,
+      image: makeupHairstyle,
     },
     {
       id: 7,
       title: 'Facial + Wax Combo',
       description: 'Flat 10% OFF',
       price: 'Special Offer',
-      image: offer7,
+      image: facialWax,
     },
     {
       id: 8,
       title: 'Pre-Bridal Package',
       description: 'Save up to ₹3,000',
       price: 'Special Offer',
-      image: offer8,
+      image: preBridal,
     },
   ]
 
@@ -117,7 +94,7 @@ const MonthlyOffersSection = () => {
                   <div className="monthly-offer-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full">
                     {/* Offer Image */}
                     <div className="relative aspect-[4/3] overflow-hidden">
-                      <Image
+                      <LazyImage
                         src={offer.image}
                         alt={offer.title}
                         fill

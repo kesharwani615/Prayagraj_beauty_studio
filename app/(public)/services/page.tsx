@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
+import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -40,12 +40,29 @@ import makeup3 from "@/public/images/makeup3.webp"
 import makeup4 from "@/public/images/makeup4.jpg"
 import makeup5 from "@/public/images/makeup5.webp"
 import makeup6 from "@/public/images/makeup6.avif"
-import makeup9 from "@/public/images/makeup9.avif"
-import makeup10 from "@/public/images/makeup10.avif"
+import makeup9 from "@/public/images/makeup9.jpg"
+import makeup10 from "@/public/images/makeup10.jpg"
 import makeup11 from "@/public/images/makeup11.jpg"
-import makeup12 from "@/public/images/makeup12.avif"
+import makeup12 from "@/public/images/makeup12.jpg"
 import makeup13 from "@/public/images/makeup13.jpg"
-
+import manicure1 from "@/public/images/Manicure & Pedicure1.jpg"
+import manicure2 from "@/public/images/Manicure & Pedicure2.jpg"
+import manicure3 from "@/public/images/Manicure & Pedicure3.jpg"
+import manicure4 from "@/public/images/Manicure & Pedicure4.jpg"
+import manicure5 from "@/public/images/Manicure & Pedicure5.png"
+import manicure6 from "@/public/images/Manicure & Pedicure6.avif"
+import mehndi1 from "@/public/images/mehndi1.jpeg"
+import mehndi2 from "@/public/images/mehndi2.jpeg"
+import mehndi3 from "@/public/images/mehndi3.jpg"
+import mehndi4 from "@/public/images/mehndi4.avif"
+import mehndi5 from "@/public/images/mehndi5.jpeg"
+import mehndi6 from "@/public/images/mehndi6.jpeg"
+import mehndi7 from "@/public/images/mehndi7.jpeg"
+import mehndi8 from "@/public/images/mehndi8.jpeg"
+import mehndi9 from "@/public/images/mehndi9.jpg"
+import mehndi10 from "@/public/images/mehndi10.avif"
+import mehndi11 from "@/public/images/mehndi11.avif"
+import mehndi12 from "@/public/images/mehndi12.avif"
 interface Service {
   id: string
   title: string
@@ -118,29 +135,28 @@ const allServices: Service[] = [
   { id: '33', title: 'Airbrush Makeup', price: '₹14,999', image: makeup2, category: 'Makeup' },
   
   // Manicure Services
-  { id: '34', title: 'Basic Manicure', price: '₹299', image: service9, category: 'Manicure & Pedicure' },
-  { id: '35', title: 'Clean-Up Manicure', price: '₹399', image: service9, category: 'Manicure & Pedicure' },
-  { id: '36', title: 'Express Manicure', price: '₹499', image: service9, category: 'Manicure & Pedicure' },
+  { id: '34', title: 'Basic Manicure', price: '₹299', image: manicure1, category: 'Manicure & Pedicure' },
+  { id: '35', title: 'Clean-Up Manicure', price: '₹399', image: manicure3, category: 'Manicure & Pedicure' },
+  { id: '36', title: 'Express Manicure', price: '₹499', image: manicure4, category: 'Manicure & Pedicure' },
   
   // Pedicure Services
-  { id: '37', title: 'Basic Pedicure', price: '₹499', image: service9, category: 'Manicure & Pedicure' },
-  { id: '38', title: 'Clean-Up Pedicure', price: '₹599', image: service9, category: 'Manicure & Pedicure' },
-  { id: '39', title: 'Express Pedicure', price: '₹699', image: service9, category: 'Manicure & Pedicure' },
+  { id: '37', title: 'Basic Pedicure', price: '₹499', image: manicure2, category: 'Manicure & Pedicure' },
+  { id: '38', title: 'Clean-Up Pedicure', price: '₹599', image: manicure6, category: 'Manicure & Pedicure' },
+  { id: '39', title: 'Express Pedicure', price: '₹699', image: manicure5, category: 'Manicure & Pedicure' },
   
   // Mehndi Services
-  { id: '40', title: 'Minimal / Floral Mehndi', price: '₹500', image: service9, category: 'Mehndi' },
-  { id: '41', title: 'Guest Mehndi', price: '₹500', image: service9, category: 'Mehndi' },
-  { id: '42', title: 'Engagement / Wedding Guest Mehndi', price: '₹500', image: service9, category: 'Mehndi' },
-  { id: '43', title: 'Arabic Mehndi (Per Hand)', price: '₹400', image: service9, category: 'Mehndi' },
-  { id: '44', title: 'Arabic Mehndi (Per Hand) - Premium', price: '₹700', image: service9, category: 'Mehndi' },
-  { id: '45', title: 'Traditional Mehndi (Per Hand)', price: '₹1,000', image: service9, category: 'Mehndi' },
-  { id: '46', title: 'Arabic Bridal Mehndi', price: '₹3,000', image: service9, category: 'Mehndi' },
-  { id: '47', title: 'Full Hands (Front + Back)', price: '₹4,000', image: service9, category: 'Mehndi' },
-  { id: '48', title: 'Bridal Mehndi', price: '₹5,000', image: service9, category: 'Mehndi' },
-  { id: '49', title: 'Full Hands + Full Legs', price: '₹5,000', image: service9, category: 'Mehndi' },
-  { id: '50', title: 'Full Hands + Legs', price: '₹7,000', image: service9, category: 'Mehndi' },
-  { id: '51', title: 'Rajasthani / Traditional Bridal Mehndi', price: '₹7,000', image: service9, category: 'Mehndi' },
-  { id: '52', title: 'Premium Bridal Mehndi (Custom Design)', price: '₹9,999', image: service9, category: 'Mehndi' },
+  { id: '40', title: 'Minimal / Floral Mehndi', price: '₹500', image: mehndi3, category: 'Mehndi' },
+  { id: '41', title: 'Guest Mehndi', price: '₹500', image: mehndi9, category: 'Mehndi' },
+  { id: '42', title: 'Engagement / Wedding Guest Mehndi', price: '₹500', image: mehndi11, category: 'Mehndi' },
+  { id: '43', title: 'Arabic Mehndi (Per Hand)', price: '₹400', image: mehndi4, category: 'Mehndi' },
+  { id: '45', title: 'Traditional Mehndi (Per Hand)', price: '₹1,000', image: mehndi1, category: 'Mehndi' },
+  { id: '46', title: 'Arabic Bridal Mehndi', price: '₹3,000', image: mehndi10, category: 'Mehndi' },
+  { id: '47', title: 'Full Hands (Front + Back)', price: '₹4,000', image: mehndi12, category: 'Mehndi' },
+  { id: '48', title: 'Bridal Mehndi', price: '₹5,000', image: mehndi7, category: 'Mehndi' },
+  { id: '49', title: 'Full Hands + Full Legs', price: '₹5,000', image: mehndi5, category: 'Mehndi' },
+  { id: '50', title: 'Full Hands + Legs', price: '₹7,000', image: mehndi6, category: 'Mehndi' },
+  { id: '51', title: 'Rajasthani / Traditional Bridal Mehndi', price: '₹7,000', image: mehndi8, category: 'Mehndi' },
+  { id: '52', title: 'Premium Bridal Mehndi (Custom Design)', price: '₹9,999', image: mehndi2, category: 'Mehndi' },
 ]
 
 // Sort services: maintain category order, sort by price within each category
@@ -270,7 +286,7 @@ const ServicesPage = () => {
               {/* Left: Images */}
               <div className="grid grid-cols-2 gap-4 fade-on-scroll">
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
-                  <Image
+                  <LazyImage
                     src={bridal1}
                     alt="Professional beauty services"
                     fill
@@ -279,7 +295,7 @@ const ServicesPage = () => {
                   />
                 </div>
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
-                  <Image
+                  <LazyImage
                     src={hair1}
                     alt="Beauty treatments at home"
                     fill
@@ -325,7 +341,7 @@ const ServicesPage = () => {
                       <div key={service.id} className="service-card-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 fade-on-scroll flex flex-col h-full">
                         {/* Service Image */}
                         <div className="relative aspect-[3/4] overflow-hidden flex-shrink-0">
-                          <Image
+                          <LazyImage
                             src={service.image}
                             alt={service.title}
                             fill

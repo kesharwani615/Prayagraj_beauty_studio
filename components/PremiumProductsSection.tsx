@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import LazyImage from '@/components/LazyImage'
 import facialTreatment1 from "@/public/images/pexels4.webp"
 import facialTreatment2 from "@/public/images/pexels1.webp"
 
@@ -17,7 +17,7 @@ const PremiumProductsSection = () => {
             {/* Left: Large Vertical Image */}
             <div className="premium-image-left relative order-2 lg:order-1">
               <div className="relative aspect-[3/4] lg:aspect-[2/3] rounded-lg overflow-hidden fade-on-scroll">
-                <Image
+                <LazyImage
                   src={facialTreatment2}
                   alt="Professional facial treatment at home - Beauty Services"
                   fill
@@ -71,7 +71,7 @@ const PremiumProductsSection = () => {
               {/* Bottom Right: Horizontal Image */}
               <div className="premium-image-bottom relative fade-on-scroll">
                 <div className="relative aspect-[4/3] lg:aspect-[16/10] rounded-lg overflow-hidden">
-                  <Image
+                  <LazyImage
                     src={facialTreatment1}
                     alt="Facial mask treatment at home - Professional beauty services"
                     fill

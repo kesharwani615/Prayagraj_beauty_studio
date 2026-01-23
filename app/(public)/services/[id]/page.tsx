@@ -1,18 +1,19 @@
 import React from 'react'
-import Image from 'next/image'
+import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import service1 from "@/public/images/image5.webp"
-import service2 from "@/public/images/image6.webp"
-import service3 from "@/public/images/image7.webp"
-import service4 from "@/public/images/image8.webp"
-import service5 from "@/public/images/image9.webp"
-import service6 from "@/public/images/image3.webp"
-import service7 from "@/public/images/image4.webp"
-import service8 from "@/public/images/image-1.webp"
-import service9 from "@/public/images/image-2.webp"
+import { allServices, type Service } from '../data/services'
+import service1 from "@/public/images/facial1.webp"
+import service2 from "@/public/images/facial2.webp"
+import service3 from "@/public/images/facial3.webp"
+import service4 from "@/public/images/facial4.webp"
+import service5 from "@/public/images/facial5.webp"
+import service6 from "@/public/images/image7.webp"
+import service7 from "@/public/images/threading1.webp"
+import service8 from "@/public/images/makeup3.webp"
+import service9 from "@/public/images/makeup12.jpg"
 
 interface ServiceDetail {
   id: string
@@ -30,164 +31,164 @@ interface ServiceDetail {
 const serviceDetails: ServiceDetail[] = [
   {
     id: '1',
-    title: 'Laser Facial Rejuvenation',
-    price: '₹2,999',
+    title: 'Classic facial',
+    price: '₹499',
     image: service1,
-    category: 'Facial Treatments',
-    description: 'Experience advanced laser technology for skin rejuvenation. This treatment helps reduce fine lines, wrinkles, age spots, and improves overall skin texture. Our expert technicians bring professional-grade equipment to your home for a comfortable and effective treatment.',
-    duration: '60-90 minutes',
+    category: 'Facial',
+    description: 'Classic facial treatment that provides deep cleansing and hydration for your skin. This traditional facial includes cleansing, exfoliation, extraction, massage, and mask application to leave your skin refreshed and glowing.',
+    duration: '60-75 minutes',
     benefits: [
-      'Reduces fine lines and wrinkles',
-      'Improves skin texture and tone',
-      'Minimizes age spots and pigmentation',
-      'Stimulates collagen production',
-      'Tightens and firms the skin',
-      'Safe and effective for all skin types'
-    ],
-    process: [
-      'Initial consultation and skin analysis',
-      'Cleansing and preparation of the treatment area',
-      'Application of protective gel',
-      'Laser treatment session',
-      'Post-treatment care and moisturization',
-      'Follow-up recommendations'
-    ],
-    whatToExpect: 'You may experience slight redness immediately after treatment, which typically subsides within a few hours. Results are visible within 2-3 weeks, with optimal results after 3-4 sessions. The treatment is virtually painless with minimal downtime.'
-  },
-  {
-    id: '2',
-    title: 'Glow Peel Treatment',
-    price: '₹1,999',
-    image: service2,
-    category: 'Facial Treatments',
-    description: 'Achieve radiant, glowing skin with our professional glow peel treatment. This gentle yet effective chemical peel removes dead skin cells, unclogs pores, and reveals brighter, smoother skin underneath.',
-    duration: '45-60 minutes',
-    benefits: [
-      'Brightens and evens skin tone',
-      'Reduces dark spots and hyperpigmentation',
-      'Unclogs pores and prevents acne',
-      'Improves skin texture',
-      'Stimulates cell renewal',
-      'Gives instant glow'
+      'Deep cleansing and pore unclogging',
+      'Improved skin hydration',
+      'Relaxing facial massage',
+      'Removes dead skin cells',
+      'Enhances skin radiance',
+      'Suitable for all skin types'
     ],
     process: [
       'Skin consultation and analysis',
-      'Deep cleansing of the face',
-      'Application of glow peel solution',
-      'Neutralization and removal',
-      'Hydrating mask application',
-      'Moisturizer and SPF application'
+      'Deep cleansing with suitable cleanser',
+      'Gentle exfoliation',
+      'Steam and extraction (if needed)',
+      'Facial massage for relaxation',
+      'Mask application and moisturization'
     ],
-    whatToExpect: 'Your skin will feel smoother immediately after treatment. You may experience slight tingling during the process. Mild redness may occur but fades quickly. Results are visible within 3-5 days with a noticeable glow.'
+    whatToExpect: 'Your skin will feel clean, refreshed, and hydrated immediately after treatment. Regular sessions (monthly) help maintain healthy, glowing skin. Suitable for all skin types and ages.'
+  },
+  {
+    id: '2',
+    title: 'Deep cleansing/acne facial',
+    price: '₹999',
+    image: service2,
+    category: 'Facial',
+    description: 'Specialized facial treatment designed to deeply cleanse pores and treat acne-prone skin. This treatment includes thorough cleansing, extraction of blackheads and whiteheads, and acne-fighting ingredients to clear and prevent breakouts.',
+    duration: '60-75 minutes',
+    benefits: [
+      'Deep pore cleansing',
+      'Reduces acne and breakouts',
+      'Removes blackheads and whiteheads',
+      'Controls excess oil production',
+      'Prevents future acne',
+      'Improves skin clarity'
+    ],
+    process: [
+      'Skin consultation and acne assessment',
+      'Deep cleansing with acne-fighting cleanser',
+      'Steam to open pores',
+      'Gentle extraction of impurities',
+      'Acne treatment mask application',
+      'Oil-free moisturizer and SPF'
+    ],
+    whatToExpect: 'Immediate improvement in skin clarity. Some redness may occur after extraction but subsides quickly. Regular sessions (every 2-3 weeks) help control acne. Follow post-treatment care instructions for best results.'
   },
   {
     id: '3',
-    title: 'Chemical Peeling',
-    price: '₹1,799',
+    title: 'Hydrating faical',
+    price: '₹1,199',
     image: service3,
-    category: 'Facial Treatments',
-    description: 'Professional chemical peeling treatment that exfoliates the skin using safe chemical solutions. This treatment helps reduce acne scars, fine lines, and improves overall skin appearance.',
-    duration: '45-60 minutes',
+    category: 'Facial',
+    description: 'Intensive hydrating facial treatment that replenishes moisture and restores skin\'s natural barrier. Perfect for dry, dehydrated skin, this treatment uses premium hydrating serums and masks to leave your skin plump, soft, and glowing.',
+    duration: '60-75 minutes',
     benefits: [
-      'Reduces acne scars and marks',
-      'Minimizes fine lines and wrinkles',
-      'Improves skin texture',
-      'Reduces pigmentation',
-      'Unclogs pores',
-      'Promotes even skin tone'
+      'Deep hydration and moisture retention',
+      'Restores skin\'s natural barrier',
+      'Reduces dryness and flakiness',
+      'Improves skin elasticity',
+      'Smooths fine lines from dehydration',
+      'Leaves skin plump and radiant'
     ],
     process: [
-      'Pre-treatment skin assessment',
-      'Cleansing and degreasing',
-      'Application of chemical peel',
-      'Monitoring and neutralization',
-      'Cooling and soothing treatment',
-      'Post-care instructions'
+      'Skin consultation and hydration assessment',
+      'Gentle cleansing',
+      'Hydrating serum application',
+      'Facial massage with hydrating products',
+      'Intensive hydrating mask',
+      'Moisturizer and protective barrier'
     ],
-    whatToExpect: 'Mild peeling may occur 2-3 days after treatment. Your skin will be more sensitive to sun, so SPF is essential. Results improve with each session. Typically 3-5 sessions recommended for best results.'
+    whatToExpect: 'Immediate improvement in skin hydration and softness. Your skin will feel plump and smooth. Best results with regular monthly sessions. Perfect for dry or dehydrated skin types.'
   },
   {
     id: '4',
-    title: 'Microneedling',
-    price: '₹2,499',
+    title: 'Anti-aging faical',
+    price: '₹1,499',
     image: service4,
-    category: 'Facial Treatments',
-    description: 'Advanced microneedling treatment that creates micro-injuries to stimulate natural collagen production. This treatment helps reduce scars, fine lines, and improves skin elasticity.',
+    category: 'Facial',
+    description: 'Professional anti-aging facial treatment designed to combat signs of aging. This comprehensive treatment targets fine lines, wrinkles, and loss of elasticity to restore youthful, radiant skin.',
     duration: '60-75 minutes',
     benefits: [
-      'Reduces acne scars and stretch marks',
-      'Improves skin elasticity',
-      'Minimizes fine lines and wrinkles',
+      'Reduces fine lines and wrinkles',
+      'Improves skin elasticity and firmness',
+      'Minimizes age spots and pigmentation',
       'Tightens loose skin',
-      'Improves skin texture',
-      'Stimulates collagen production'
+      'Boosts collagen production',
+      'Restores youthful glow'
     ],
     process: [
-      'Skin preparation and numbing (if needed)',
-      'Microneedling device application',
-      'Serum infusion',
-      'Cooling and soothing',
-      'Protective barrier application',
-      'Post-treatment care guidance'
+      'Skin consultation and analysis',
+      'Deep cleansing and exfoliation',
+      'Anti-aging serum application',
+      'Facial massage and treatment',
+      'Hydrating mask application',
+      'Moisturizer and SPF application'
     ],
-    whatToExpect: 'Mild redness and sensitivity for 24-48 hours. Your skin may feel tight. Avoid sun exposure and use gentle skincare. Results become visible after 2-3 weeks. Multiple sessions recommended for optimal results.'
+    whatToExpect: 'Your skin will feel smoother and more hydrated immediately. Results improve with regular sessions. Recommended 4-6 sessions for optimal anti-aging benefits. Suitable for all skin types.'
   },
   {
     id: '5',
-    title: 'Microneedling with Botox',
-    price: '₹4,999',
+    title: 'Brightening/radiance faical',
+    price: '₹1,799',
     image: service5,
-    category: 'Facial Treatments',
-    description: 'Combined treatment of microneedling with Botox for enhanced results. This advanced procedure addresses both texture and fine lines, providing comprehensive skin rejuvenation.',
-    duration: '75-90 minutes',
+    category: 'Facial',
+    description: 'Professional brightening facial treatment that targets dullness, dark spots, and uneven skin tone. This treatment uses advanced brightening agents to reveal radiant, glowing skin with improved clarity and luminosity.',
+    duration: '60-75 minutes',
     benefits: [
-      'Reduces fine lines and wrinkles',
-      'Improves skin texture',
-      'Tightens and firms skin',
-      'Reduces pore size',
-      'Stimulates collagen production',
-      'Long-lasting results'
+      'Brightens and evens skin tone',
+      'Reduces dark spots and hyperpigmentation',
+      'Improves skin radiance and glow',
+      'Minimizes dullness',
+      'Enhances skin clarity',
+      'Suitable for all skin types'
     ],
     process: [
-      'Consultation and skin analysis',
-      'Cleansing and preparation',
-      'Botox injection (if applicable)',
-      'Microneedling treatment',
-      'Serum application',
-      'Post-treatment care'
+      'Skin consultation and analysis',
+      'Deep cleansing and exfoliation',
+      'Brightening serum application',
+      'Facial massage and treatment',
+      'Brightening mask application',
+      'Moisturizer and SPF application'
     ],
-    whatToExpect: 'Combined benefits of both treatments. Minimal downtime. Results visible within 1-2 weeks. Botox effects last 3-4 months. Microneedling benefits continue to improve over time.'
+    whatToExpect: 'Immediate glow and radiance after treatment. Skin will appear brighter and more even-toned. Results improve with regular sessions. Recommended 4-6 sessions for optimal brightening. Use SPF daily to maintain results.'
   },
   {
-    id: '6',
-    title: 'Permanent Hair Removal - Full Body',
-    price: '₹4,999',
+    id: '10',
+    title: 'Calming/sensitive skin faical',
+    price: '₹2,499',
     image: service6,
-    category: 'Hair Removal',
-    description: 'Professional laser hair removal treatment for full body. Our advanced laser technology targets hair follicles to provide long-lasting hair reduction. Safe and effective for all skin types.',
-    duration: '90-120 minutes',
+    category: 'Facial',
+    description: 'Gentle facial treatment specially designed for sensitive and reactive skin. This calming treatment soothes irritation, reduces redness, and provides gentle care without causing any discomfort.',
+    duration: '60-75 minutes',
     benefits: [
-      'Permanent hair reduction',
-      'Smooth, hair-free skin',
-      'No more shaving or waxing',
-      'Suitable for all body areas',
-      'Safe for all skin types',
-      'Long-lasting results'
+      'Soothes sensitive and irritated skin',
+      'Reduces redness and inflammation',
+      'Gentle and non-irritating',
+      'Restores skin barrier',
+      'Provides calming relief',
+      'Suitable for sensitive skin types'
     ],
     process: [
-      'Consultation and patch test',
-      'Cleansing the treatment area',
-      'Application of cooling gel',
-      'Laser treatment session',
-      'Post-treatment soothing',
-      'Aftercare instructions'
+      'Skin consultation and sensitivity assessment',
+      'Gentle cleansing with mild products',
+      'Calming serum application',
+      'Gentle facial massage',
+      'Soothing mask application',
+      'Moisturizer and protective barrier'
     ],
-    whatToExpect: 'Mild redness and sensitivity immediately after treatment. Hair will shed naturally over 1-2 weeks. Multiple sessions (6-8) required for permanent results. Sessions spaced 4-6 weeks apart.'
+    whatToExpect: 'Immediate soothing and calming effect on your skin. Redness and irritation will be reduced. Perfect for sensitive, reactive, or rosacea-prone skin. Regular sessions help maintain skin calmness.'
   },
   {
     id: '7',
     title: 'Eyebrow Lamination',
-    price: '₹999',
+    price: '₹29',
     image: service7,
     category: 'Hair Removal',
     description: 'Professional eyebrow lamination service that shapes and sets your eyebrows in place. This treatment gives you perfectly groomed, fuller-looking eyebrows that last for weeks.',
@@ -266,42 +267,219 @@ const serviceDetails: ServiceDetail[] = [
 ]
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string
+  }>
+}
+
+// Helper function to generate default details for services without specific details
+const generateDefaultDetails = (service: Service): ServiceDetail => {
+  const categoryDefaults: Record<string, { duration: string; description: string; benefits: string[]; process: string[]; whatToExpect: string }> = {
+    'Facial': {
+      duration: '60-75 minutes',
+      description: `Professional ${service.title.toLowerCase()} treatment designed to enhance your skin's health and appearance. Our expert beauticians bring salon-quality care directly to your home.`,
+      benefits: [
+        'Professional treatment at home',
+        'Deep cleansing and nourishment',
+        'Improved skin texture',
+        'Relaxing experience',
+        'Suitable for all skin types',
+        'Expert care and attention'
+      ],
+      process: [
+        'Initial consultation',
+        'Skin analysis',
+        'Treatment application',
+        'Relaxation and care',
+        'Post-treatment guidance',
+        'Follow-up recommendations'
+      ],
+      whatToExpect: 'Your skin will feel refreshed and rejuvenated after treatment. Results improve with regular sessions. Our professional team ensures a comfortable and effective experience.'
+    },
+    'Hair Removal': {
+      duration: '30-60 minutes',
+      description: `Professional ${service.title.toLowerCase()} service for smooth, hair-free skin. Our expert technicians use premium products and techniques for effective hair removal.`,
+      benefits: [
+        'Smooth, hair-free skin',
+        'Professional technique',
+        'Premium products used',
+        'Long-lasting results',
+        'Comfortable experience',
+        'Expert care'
+      ],
+      process: [
+        'Consultation and preparation',
+        'Cleansing the area',
+        'Application of product',
+        'Hair removal process',
+        'Soothing treatment',
+        'Aftercare instructions'
+      ],
+      whatToExpect: 'Smooth, hair-free skin immediately after treatment. Some redness may occur but subsides quickly. Results last for several weeks. Regular sessions recommended for best results.'
+    },
+    'Hair Cut & Hair Care': {
+      duration: '45-90 minutes',
+      description: `Professional ${service.title.toLowerCase()} service delivered to your home. Our skilled hairstylists provide expert cuts and styling for your convenience.`,
+      benefits: [
+        'Expert hairstyling',
+        'Professional cuts',
+        'Convenient home service',
+        'Personalized styling',
+        'Quality products used',
+        'Satisfaction guaranteed'
+      ],
+      process: [
+        'Consultation on desired style',
+        'Hair wash and preparation',
+        'Cutting and styling',
+        'Blow dry and finishing',
+        'Final touches',
+        'Styling tips and care'
+      ],
+      whatToExpect: 'Fresh, styled hair that looks salon-perfect. Our professional stylists ensure you get the look you want. Convenient home service saves you time and effort.'
+    },
+    'Makeup': {
+      duration: '60-120 minutes',
+      description: `Professional ${service.title.toLowerCase()} service for your special occasion. Our makeup artists create stunning looks that last all day and photograph beautifully.`,
+      benefits: [
+        'Professional makeup application',
+        'Long-lasting makeup',
+        'Photography-ready finish',
+        'Customized to your style',
+        'Premium products used',
+        'Expert artistry'
+      ],
+      process: [
+        'Consultation on desired look',
+        'Skin preparation',
+        'Base makeup application',
+        'Eye makeup and contouring',
+        'Lip color and finishing',
+        'Setting and touch-up kit'
+      ],
+      whatToExpect: 'Beautiful, camera-ready makeup that lasts throughout your event. Our professional artists ensure you look stunning. Touch-up kit provided for the day.'
+    },
+    'Manicure & Pedicure': {
+      duration: '60-90 minutes',
+      description: `Professional ${service.title.toLowerCase()} service for well-groomed hands and feet. Our technicians provide expert nail care and pampering.`,
+      benefits: [
+        'Well-groomed nails',
+        'Relaxing experience',
+        'Professional nail care',
+        'Premium products used',
+        'Long-lasting results',
+        'Expert technique'
+      ],
+      process: [
+        'Consultation and nail assessment',
+        'Cleansing and preparation',
+        'Cutting and shaping',
+        'Cuticle care',
+        'Polish application',
+        'Finishing and care tips'
+      ],
+      whatToExpect: 'Beautiful, well-groomed nails that look salon-perfect. Your hands and feet will feel pampered and cared for. Results last for weeks with proper care.'
+    },
+    'Mehndi': {
+      duration: '60-180 minutes',
+      description: `Professional ${service.title.toLowerCase()} service for beautiful henna designs. Our skilled artists create intricate patterns that last for weeks.`,
+      benefits: [
+        'Beautiful henna designs',
+        'Traditional and modern patterns',
+        'Long-lasting color',
+        'Expert artistry',
+        'Customized designs',
+        'Professional application'
+      ],
+      process: [
+        'Consultation on design',
+        'Preparation of henna',
+        'Design application',
+        'Drying and setting',
+        'Removal and care',
+        'Aftercare instructions'
+      ],
+      whatToExpect: 'Stunning henna designs that develop into rich, dark color over 24-48 hours. Designs last 1-3 weeks depending on care. Our artists ensure beautiful, intricate patterns.'
+    }
+  }
+
+  const defaults = categoryDefaults[service.category] || categoryDefaults['Facial']
+
+  return {
+    id: service.id,
+    title: service.title,
+    price: service.price,
+    image: service.image,
+    category: service.category,
+    description: defaults.description,
+    duration: defaults.duration,
+    benefits: defaults.benefits,
+    process: defaults.process,
+    whatToExpect: defaults.whatToExpect
   }
 }
 
-const ServiceDetailPage = ({ params }: PageProps) => {
-  const service = serviceDetails.find(s => s.id === params.id)
-
-  if (!service) {
+const ServiceDetailPage = async ({ params }: PageProps) => {
+  // Await params in Next.js 16+ App Router
+  const { id } = await params
+  
+  // First, try to find service in the listing
+  const baseService = allServices.find(s => s.id === id)
+  
+  if (!baseService) {
     notFound()
   }
+
+  // Try to find detailed info, otherwise generate defaults
+  const detailedService = serviceDetails.find(s => s.id === id)
+  const service = detailedService || generateDefaultDetails(baseService)
 
   return (
     <>
       <Navbar />
       <main className="service-detail-page bg-hero-light min-h-screen">
-        {/* Breadcrumb */}
-        <div className="bg-hero-light border-b border-gray-200">
+        {/* Breadcrumb with Back Button */}
+        <div className="bg-hero-light border-b mt-20 border-gray-200">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav className="text-sm" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2">
-                <li>
-                  <Link href="/" className="text-hero-text-dark/60 hover:text-hero-accent transition-colors">
-                    Home
-                  </Link>
-                </li>
-                <li className="text-hero-text-dark/40">/</li>
-                <li>
-                  <Link href="/services" className="text-hero-text-dark/60 hover:text-hero-accent transition-colors">
-                    Services
-                  </Link>
-                </li>
-                <li className="text-hero-text-dark/40">/</li>
-                <li className="text-hero-accent font-semibold">{service.title}</li>
-              </ol>
-            </nav>
+            <div className="flex items-center justify-between gap-4">
+              {/* Back Button */}
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 px-4 py-2 text-[#2d2d2d] hover:text-hero-accent transition-all duration-200 font-semibold rounded-lg hover:bg-white/80 border border-transparent hover:border-gray-200 shadow-sm"
+                aria-label="Back to services"
+              >
+                <svg 
+                  className="w-5 h-5" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                </svg>
+                <span className="hidden sm:inline">Back to Services</span>
+                <span className="sm:hidden">Back</span>
+              </Link>
+
+              {/* Breadcrumb */}
+              <nav className="text-sm hidden md:block" aria-label="Breadcrumb">
+                <ol className="flex items-center space-x-2">
+                  <li>
+                    <Link href="/" className="text-hero-text-dark/60 hover:text-hero-accent transition-colors">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="text-hero-text-dark/40">/</li>
+                  <li>
+                    <Link href="/services" className="text-hero-text-dark/60 hover:text-hero-accent transition-colors">
+                      Services
+                    </Link>
+                  </li>
+                  <li className="text-hero-text-dark/40">/</li>
+                  <li className="text-hero-accent font-semibold">{service.title}</li>
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
 
@@ -313,7 +491,7 @@ const ServiceDetailPage = ({ params }: PageProps) => {
               {/* Left: Image */}
               <div className="service-detail-image">
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg">
-                  <Image
+                  <LazyImage
                     src={service.image}
                     alt={service.title}
                     fill
@@ -344,7 +522,7 @@ const ServiceDetailPage = ({ params }: PageProps) => {
                 </div>
 
                 <div className="service-detail-duration bg-white p-4 rounded-lg">
-                  <p className="text-hero-text-dark">
+                  <p className="text-black">
                     <span className="font-semibold">Duration:</span> {service.duration}
                   </p>
                 </div>
@@ -411,7 +589,7 @@ const ServiceDetailPage = ({ params }: PageProps) => {
                 What to Expect
               </h2>
               <div className="bg-white p-6 lg:p-8 rounded-lg">
-                <p className="text-hero-text-dark/80 leading-relaxed">
+                <p className="text-black leading-relaxed">
                   {service.whatToExpect}
                 </p>
               </div>

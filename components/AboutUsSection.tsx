@@ -1,28 +1,27 @@
 'use client'
 
 import React, { useState } from 'react'
-import Image from 'next/image'
+import LazyImage from '@/components/LazyImage'
 import woman1 from "@/public/images/female-model-wedding-bridal-makeup.webp"
 import woman2 from "@/public/images/model-light-makeup-holding-spring-flowers.webp"
 
 const AboutUsSection = () => {
-  const [activeTreatment, setActiveTreatment] = useState('classic-gold')
+  const [activeFeature, setActiveFeature] = useState('professional')
   
-  const treatments = [
-    { id: 'classic-gold', name: 'A Classic Gold' },
-    { id: 'caviar-power', name: 'Caviar Power' },
-    { id: 'hyaluron', name: 'X-Treme Hyaluron Infusion' },
-    { id: 'clinical-care', name: 'Clinical Care' },
-    { id: 'peeling-acid', name: 'Peeling Acid' },
+  const serviceFeatures = [
+    { id: 'professional', name: 'Expert Professionals' },
+    { id: 'quality', name: 'Premium Products' },
+    { id: 'convenience', name: 'Home Service' },
+    { id: 'trust', name: 'Trusted Service' },
   ]
 
-  const treatmentEffects = [
-    'Stimulates facial muscles',
-    'Harmonizes energy flow',
-    'Revitalizes, refreshes, regenerates',
-    'Reduces visible expression lines',
-    'Cell renewal',
-    'Removes toxins',
+  const serviceBenefits = [
+    'Trained and certified beauty experts at your doorstep',
+    'Only premium, tested beauty products used',
+    'Save time - no need to travel to salons',
+    'Personalized service tailored to your needs',
+    'Hygienic and safe beauty treatments',
+    'Flexible scheduling that fits your routine',
   ]
 
   return (
@@ -35,7 +34,7 @@ const AboutUsSection = () => {
             {/* Left Portrait */}
             <div className="hidden lg:block lg:col-span-1">
               <div className="relative aspect-[2/3] max-w-[200px] mx-auto">
-                <Image
+                <LazyImage
                   src={woman1}
                   alt="Professional beauty expert - Home beauty services"
                   fill
@@ -83,7 +82,7 @@ const AboutUsSection = () => {
             {/* Right Portrait */}
             <div className="hidden lg:block lg:col-span-1">
               <div className="relative aspect-[2/3] max-w-[200px] mx-auto">
-                <Image
+                <LazyImage
                   src={woman2}
                   alt="Beauty specialist providing home services"
                   fill
@@ -96,57 +95,60 @@ const AboutUsSection = () => {
         </div>
       </div>
 
-      {/* Bottom Section - Treatments */}
+      {/* Bottom Section - Why Choose Us */}
       <div className="about-us-bottom bg-[#1a1a1a] py-16 lg:py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 fade-on-scroll">
           
           {/* Main Title */}
           <h3 className="about-us-treatment-title text-white mb-8 lg:mb-12 fade-in-on-load">
-            Innovative Cosmetic Treatments
+            Why Choose Our Home Beauty Services?
           </h3>
 
-          {/* Treatment Tabs */}
+          {/* Service Feature Tabs */}
           <div className="flex flex-wrap gap-3 lg:gap-4 mb-12 ">
-            {treatments.map((treatment) => (
+            {serviceFeatures.map((feature) => (
               <button
-                key={treatment.id}
-                onClick={() => setActiveTreatment(treatment.id)}
+                key={feature.id}
+                onClick={() => setActiveFeature(feature.id)}
                 className={`treatment-tab px-4 lg:px-6 py-2 lg:py-3 rounded-lg transition-all duration-300 ${
-                  activeTreatment === treatment.id
+                  activeFeature === feature.id
                     ? 'bg-hero-light text-hero-dark font-semibold'
                     : 'bg-transparent border border-white/20 text-white hover:border-white/40'
                 }`}
-                aria-label={`Select ${treatment.name} treatment`}
-                aria-pressed={activeTreatment === treatment.id}
+                aria-label={`Select ${feature.name} feature`}
+                aria-pressed={activeFeature === feature.id}
               >
-                <span className="text-xs lg:text-sm whitespace-nowrap">{treatment.name}</span>
+                <span className="text-xs lg:text-sm whitespace-nowrap">{feature.name}</span>
               </button>
             ))}
           </div>
 
-          {/* Treatment Details */}
+          {/* Service Details */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             
-            {/* Left: Description */}
+            {/* Left: Trust Building Description */}
             <div className="treatment-description fade-in-on-load">
               <h4 className="text-white text-xl lg:text-2xl font-semibold mb-4">
-                Vitamin A Benefits
+                Your Beauty, Our Commitment
               </h4>
+              <p className="text-white/80 text-sm lg:text-base leading-relaxed mb-4">
+                We understand that choosing a beauty service is about trust. That's why we bring salon-quality treatments directly to your home with certified professionals who care about your beauty and comfort. No more rushing to appointments or waiting in crowded salons.
+              </p>
               <p className="text-white/80 text-sm lg:text-base leading-relaxed">
-                Vitamin A plays a crucial role in skin structure and function. It supports collagen formation, enhances enzymatic activity, and activates repair mechanisms, leading to remarkable results. Regular treatments with Vitamin A-based products help achieve fresh, elastic, and radiant skin that glows with health and vitality.
+                Our team uses only premium, tested products and follows strict hygiene standards. Every service is personalized to match your skin type, preferences, and schedule. Experience the luxury of professional beauty care in the comfort and privacy of your own home.
               </p>
             </div>
 
-            {/* Right: Effects List */}
+            {/* Right: Benefits List */}
             <div className="treatment-effects fade-in-on-load">
               <h4 className="text-white text-xl lg:text-2xl font-semibold mb-6">
-                Effects of Treatment:
+                What You Get:
               </h4>
               <ul className="space-y-3">
-                {treatmentEffects.map((effect, index) => (
+                {serviceBenefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="text-hero-light text-lg mt-1" aria-hidden="true">•</span>
-                    <span className="text-white/90 text-sm lg:text-base">{effect}</span>
+                    <span className="text-white/90 text-sm lg:text-base">{benefit}</span>
                   </li>
                 ))}
               </ul>
