@@ -79,7 +79,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/prayagraj_beauty_studio_07/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-icon w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300"
@@ -118,6 +118,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/artist" className="footer-link text-white/80 hover:text-white transition-colors duration-200">
+                  Artist
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="footer-link text-white/80 hover:text-white transition-colors duration-200">
                   Contact
                 </Link>
@@ -146,8 +151,8 @@ const Footer = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href="tel:+919876543210" className="hover:text-white transition-colors duration-200">
-                  +91 98765 43210
+                <a href="tel:+919792615969" className="hover:text-white transition-colors duration-200">
+                  +91 97926 15969
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -176,8 +181,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span className="break-words">
-                  Home Service Available<br />
-                  All Major Cities, India
+                 Ews 163 kalnidipurm rajroopur prayagraj
                 </span>
               </li>
             </ul>
@@ -193,10 +197,7 @@ const Footer = () => {
                 Mon-Fri: 09:00-19:00
               </li>
               <li>
-                Sat: 09:00-17:00
-              </li>
-              <li>
-                Sun: Closed
+                Sat-Sun: 09:00-17:00
               </li>
             </ul>
           </div>

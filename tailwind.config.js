@@ -5,6 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./features/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     container: {
       center: true,

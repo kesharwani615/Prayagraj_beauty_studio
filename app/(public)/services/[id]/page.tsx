@@ -529,7 +529,7 @@ const ServiceDetailPage = async ({ params }: PageProps) => {
 
                 {/* Book Now Button */}
                 <Link
-                  href="/contact"
+                  href="/book-appointment"
                   className="service-detail-book-button inline-flex items-center gap-2 px-8 py-4 bg-hero-text-dark text-white rounded-lg font-semibold hover:bg-hero-text-dark/90 transition-all duration-300 hover:transform hover:translateY(-2px) hover:shadow-lg"
                 >
                   Book Appointment
