@@ -25,7 +25,7 @@ export default function BookAppointment() {
             We're excited to help you look and feel your best. Call us now to schedule your visit and let us pamper you!
           </p>
           <a
-            href="tel:+1-555-123-4567"
+            href="tel:+91 9792615969"
             className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animate-pulse shadow-lg hover:shadow-xl"
           >
             📞 Call Now: 97926 15969
