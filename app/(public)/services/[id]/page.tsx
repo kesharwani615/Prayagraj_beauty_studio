@@ -437,15 +437,15 @@ const ServiceDetailPage = async ({ params }: PageProps) => {
   return (
     <>
       <Navbar />
-      <main className="service-detail-page bg-hero-light min-h-screen">
+      <main className="service-detail-page bg-hero-dark-black min-h-screen">
         {/* Breadcrumb with Back Button */}
-        <div className="bg-hero-light border-b mt-20 border-gray-200">
+        <div className="bg-hero-dark-black border-b mt-20 border-gray-200">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex items-center justify-between gap-4">
               {/* Back Button */}
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-4 py-2 text-[#2d2d2d] hover:text-hero-accent transition-all duration-200 font-semibold rounded-lg hover:bg-white/80 border border-transparent hover:border-gray-200 shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-hero-light text-[#2d2d2d] hover:text-hero-accent transition-all duration-200 font-semibold rounded-lg hover:bg-white/80 border border-hero-light hover:border-gray-200 shadow-sm"
                 aria-label="Back to services"
               >
                 <svg 
@@ -463,15 +463,15 @@ const ServiceDetailPage = async ({ params }: PageProps) => {
 
               {/* Breadcrumb */}
               <nav className="text-sm hidden md:block" aria-label="Breadcrumb">
-                <ol className="flex items-center space-x-2">
+                <ol className="flex items-center space-x-2 mt-[4rem]">
                   <li>
-                    <Link href="/" className="text-hero-text-dark/60 hover:text-hero-accent transition-colors">
+                    <Link href="/" className="text-hero-light hover:text-hero-accent transition-colors">
                       Home
                     </Link>
                   </li>
                   <li className="text-hero-text-dark/40">/</li>
                   <li>
-                    <Link href="/services" className="text-hero-text-dark/60 hover:text-hero-accent transition-colors">
+                    <Link href="/services" className="text-hero-light hover:text-hero-accent transition-colors">
                       Services
                     </Link>
                   </li>
