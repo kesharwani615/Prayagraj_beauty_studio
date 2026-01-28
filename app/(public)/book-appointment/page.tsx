@@ -22,14 +22,25 @@ export default function BookAppointment() {
             Book Your Appointment
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-            We're excited to help you look and feel your best. Call us now to schedule your visit and let us pamper you!
+            We're excited to help you look and feel your best. Call us or message us on WhatsApp to schedule your visit and let us pamper you!
           </p>
-          <a
-            href="tel:+91 9792615969"
-            className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animate-pulse shadow-lg hover:shadow-xl"
-          >
-            📞 Call Now: 97926 15969
-          </a>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="tel:+919792615969"
+              className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animate-pulse shadow-lg hover:shadow-xl"
+            >
+              📞 Call Now: 97926 15969
+            </a>
+            <a
+              href="https://wa.me/919792615969?text=Hi%20Prayagraj%20Beauty%20Studio%2C%20I%20want%20to%20book%20an%20appointment."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              💬 WhatsApp
+            </a>
+          </div>
           <p className="text-sm text-gray-500 mt-8 leading-relaxed max-w-md mx-auto">
             If your call is not picked up, please don't worry. We may be busy assisting another client. Kindly try calling again after a few moments, and we'll be happy to assist you.
           </p>

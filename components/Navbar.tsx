@@ -116,31 +116,46 @@ const Navbar: React.FC = () => {
                 BOOK NOW
               </Link>
               
-              {/* Phone Number Tooltip on Hover */}
+              {/* Phone / WhatsApp Tooltip on Hover */}
               <div className="absolute right-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 ">
-                <div className="bg-navbar-text text-navbar-bg px-4 py-2 rounded-lg shadow-lg whitespace-nowrap">
+                <div className="bg-navbar-text text-navbar-bg px-4 py-3 rounded-lg shadow-lg whitespace-nowrap space-y-1">
                   <a 
-                    href="tel:+919876543210" 
+                    href="tel:+919792615969" 
                     className="flex items-center gap-2 text-sm font-semibold hover:underline "
                   >
                     <span className='shake-animation'>
+                      <svg 
+                        className="w-4 h-4" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
+                        />
+                      </svg>
+                    </span>
+                    Call: +91 97926 15969
+                  </a>
+                  <a
+                    href="https://wa.me/919792615969?text=Hi%20Prayagraj%20Beauty%20Studio%2C%20I%20want%20to%20book%20an%20appointment."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm font-semibold hover:underline "
+                  >
                     <svg 
                       className="w-4 h-4" 
-                      fill="none" 
-                      stroke="currentColor" 
+                      fill="currentColor" 
                       viewBox="0 0 24 24"
                       aria-hidden="true"
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
-                        />
+                      <path d="M12 2C6.486 2 2 6.486 2 12c0 1.922.544 3.742 1.577 5.334L2 22l4. Eight -. 1.577C8.258 21.456 10.078 22 12 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18c-1.715 0-3.363-.514-4.777-1.486l-.342-.229-2.836.836.847-2.766-.223-.35A7.935 7.935 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.138-5.671c-.227-.113-1.343-.664-1.551-.739-.208-.076-.36-.113-.512.114-.151.227-.586.739-.718.891-.132.151-.265.17-.492.057-.227-.114-.959-.354-1.828-1.129-.676-.603-1.132-1.349-1.265-1.576-.132-.227-.014-.35.1-.463.103-.102.227-.265.34-.397.113-.132.151-.227.227-.379.075-.151.038-.284-.019-.397-.057-.113-.512-1.235-.703-1.691-.185-.445-.374-.385-.512-.392l-.437-.008c-.151 0-.397.057-.605.284-.208.227-.797.778-.797 1.897 0 1.118.816 2.197.93 2.347.113.151 1.606 2.448 3.891 3.431.544.235.968.376 1.299.482.545.173 1.04.149 1.431.09.437-.065 1.343-.548 1.533-1.077.189-.529.189-.983.132-1.077-.057-.094-.208-.151-.437-.265z" />
                     </svg>
-                        </span>
-
-                    +91 98765 43210
+                    WhatsApp
                   </a>
                 </div>
                 {/* Arrow pointing up */}

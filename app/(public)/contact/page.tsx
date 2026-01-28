@@ -84,7 +84,7 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  {/* Phone */}
+                  {/* Phone & WhatsApp */}
                   <div className="flex items-start gap-4">
                     <div className="contact-icon-wrapper shrink-0">
                       <svg 
@@ -102,12 +102,20 @@ const ContactPage = () => {
                         />
                       </svg>
                     </div>
-                    <div>
+                    <div className="space-y-1">
                       <a 
-                        href="tel:+919876543210" 
+                        href="tel:+919792615969" 
                         className="contact-detail-text text-hero-light hover:text-hero-accent transition-colors duration-200"
                       >
-                        +91 9792615969
+                        +91 9792615969 (Call)
+                      </a>
+                      <a
+                        href="https://wa.me/919792615969?text=Hi%20Prayagraj%20Beauty%20Studio%2C%20I%20have%20a%20question%20about%20your%20services."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contact-detail-text text-green-400 hover:text-green-300 transition-colors duration-200"
+                      >
+                        💬 WhatsApp
                       </a>
                     </div>
                   </div>
