@@ -65,7 +65,7 @@ export default function Artist() {
                           key={i}
                           src={img}
                           alt={`Award ${i + 1}`}
-                          className="w-full h-48 object-cover rounded-lg shadow-md"
+                          className="w-full h-72 sm:h-48 object-cover rounded-lg shadow-md"
                         />
                       ))}
                     </div>
