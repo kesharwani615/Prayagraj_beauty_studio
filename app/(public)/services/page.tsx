@@ -147,7 +147,7 @@ const allServices: Service[] = [
   // Mehndi Services
   { id: '40', title: 'Minimal / Floral Mehndi', price: '₹500', image: mehndi3, category: 'Mehndi' },
   { id: '41', title: 'Guest Mehndi', price: '₹500', image: mehndi9, category: 'Mehndi' },
-  { id: '42', title: 'Engagement / Wedding Guest Mehndi', price: '₹500', image: mehndi11, category: 'Mehndi' },
+  { id: '42', title: 'Engagement Mehndi', price: '₹2,999', image: mehndi11, category: 'Mehndi' },
   { id: '43', title: 'Arabic Mehndi (Per Hand)', price: '₹400', image: mehndi4, category: 'Mehndi' },
   { id: '45', title: 'Traditional Mehndi (Per Hand)', price: '₹1,000', image: mehndi1, category: 'Mehndi' },
   { id: '46', title: 'Arabic Bridal Mehndi', price: '₹3,000', image: mehndi10, category: 'Mehndi' },
