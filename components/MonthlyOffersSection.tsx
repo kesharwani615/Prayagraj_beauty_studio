@@ -74,7 +74,7 @@ const MonthlyOffersSection = () => {
           <h2 className="monthly-offers-title text-hero-text-light! mb-4">
             Monthly Offers
           </h2>
-          <p className="monthly-offers-subtitle text-hero-text-dark/80">
+          <p className="monthly-offers-subtitle text-hero-text-dark">
             Special promotions on our premium beauty services
           </p>
         </div>

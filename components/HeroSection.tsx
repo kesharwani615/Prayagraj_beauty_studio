@@ -128,8 +128,8 @@ const HeroSection = () => {
             <div className="hero-light">
                 {/* container mobile padding size padding appied on media query */}
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                     <div className="w-full lg:w-1/2 flex justify-between py-3 fade-on-scroll">
-                            <div className=" flex flex-col items-center justify-center gap-2 ">
+                     <div className="w-full lg:w-1/2 flex justify-between py-3 ">
+                            <div className=" fade-on-scroll flex flex-col items-center justify-center gap-2 ">
                                 <div className="h-[50px] w-[50px]">
                                 <LazyImage src={group}
                                 alt="Premium Products"
@@ -139,7 +139,7 @@ const HeroSection = () => {
                                 </div>
                                 <h3 className="text-[#2d2d2d] font-semibold ">Premium Products</h3>
                             </div>
-                            <div className=" flex flex-col items-center justify-center gap-2">
+                            <div className=" fade-on-scroll flex flex-col items-center justify-center gap-2">
                                 <div className="h-[50px] w-[50px]">
                                 <LazyImage src={group}
                                 alt="Expert Staff"
@@ -149,7 +149,7 @@ const HeroSection = () => {
                                 </div>
                                 <h3 className="text-[#2d2d2d] font-semibold">Expert Staff</h3>
                             </div>
-                            <div className=" flex flex-col items-center justify-center gap-2">
+                            <div className=" fade-on-scroll flex flex-col items-center justify-center gap-2">
                                 <div className="h-[50px] w-[50px]">
                                 <LazyImage src={group}
                                 alt="Home Service"

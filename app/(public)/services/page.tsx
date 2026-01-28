@@ -257,18 +257,18 @@ const ServicesPage = () => {
   return (
     <>
       <Navbar />
-      <main className="services-page bg-hero-light min-h-screen">
+      <main className="services-page bg-hero-dark-black min-h-screen">
         {/* Breadcrumb */}
-        <div className="bg-hero-light mt-[6rem] fade-on-scroll">
+        <div className="bg-hero-dark-black mt-[4rem] sm:mt-[5rem] ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-4">
             <nav className="text-sm" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2">
+              <ol className="flex items-center space-x-2 ">
                 <li>
-                  <Link href="/" className="text-hero-text-dark/60 hover:text-hero-accent transition-colors">
+                  <Link href="/" className="text-hero-light hover:text-hero-accent transition-colors">
                     Home
                   </Link>
                 </li>
-                <li className="text-hero-text-dark/40">/</li>
+                <li className="text-hero-light">/</li>
                 <li>
                   <Link href="/services" className="text-hero-accent font-semibold">
                     Services
@@ -280,7 +280,7 @@ const ServicesPage = () => {
         </div>
 
         {/* Hero Section */}
-        <section className="services-hero bg-hero-light py-12 lg:py-16">
+        <section className="services-hero bg-hero-dark-black py-12 lg:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left: Images */}
@@ -307,10 +307,10 @@ const ServicesPage = () => {
 
               {/* Right: Text Content */}
               <div className="space-y-4 fade-on-scroll">
-                <h1 className="services-page-title text-hero-text-dark">
+                <h1 className="services-page-title text-hero-light">
                   The Place Of <span className="text-hero-accent">Beauty</span>
                 </h1>
-                <p className="services-page-description text-hero-text-dark/80">
+                <p className="services-page-description text-hero-light">
                   Explore our beauty services, choose the one you like and follow the link to book. We'll be glad to serve you at your home with premium quality treatments.
                 </p>
               </div>
@@ -330,7 +330,7 @@ const ServicesPage = () => {
                 <div key={category} className="mb-16 lg:mb-20">
                   {/* Category Header */}
                   <div className="flex items-center justify-between mb-8">
-                    <h2 className="services-category-title text-hero-text-dark opacity-100">
+                    <h2 className="services-category-title text-hero-light opacity-100">
                       {category}
                     </h2>
                   </div>

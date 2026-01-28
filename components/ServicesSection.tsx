@@ -187,7 +187,7 @@ const ServicesSection = () => {
           <h2 className="services-title text-hero-text-dark mb-4">
             Our Services
           </h2>
-          <p className="services-subtitle text-hero-text-dark/80">
+          <p className="services-subtitle text-hero-text-dark">
             Premium beauty treatments for all ages - We come to your home!
           </p>
         </div>
