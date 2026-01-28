@@ -6,7 +6,9 @@ import { useState, useEffect, useRef } from "react"
 import makeup1 from "@/public/images/now-word-bold-text-style.webp"
 import makeup2 from "@/public/images/image-2.webp"
 import makeup3 from "@/public/images/beautiful-woman.webp"
-import group from "@/public/images/Group.webp"
+import group from "@/public/images/Group.png"
+import expert from "@/public/images/heriIcon (1).png"
+import home from "@/public/images/heriIcon (2).png"
 
 const HeroSection = () => {
     const videos = ["/Video/video1.webm", "/Video/video2.webm", "/Video/video3.webm"]
@@ -141,7 +143,7 @@ const HeroSection = () => {
                             </div>
                             <div className=" fade-on-scroll flex flex-col items-center justify-center gap-2">
                                 <div className="h-[50px] w-[50px]">
-                                <LazyImage src={group}
+                                <LazyImage src={expert}
                                 alt="Expert Staff"
                                 className="w-full h-full object-contain"
                                 width={50}
@@ -151,7 +153,7 @@ const HeroSection = () => {
                             </div>
                             <div className=" fade-on-scroll flex flex-col items-center justify-center gap-2">
                                 <div className="h-[50px] w-[50px]">
-                                <LazyImage src={group}
+                                <LazyImage src={home}
                                 alt="Home Service"
                                 className="w-full h-full object-contain"
                                 width={50}

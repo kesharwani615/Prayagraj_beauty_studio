@@ -102,7 +102,7 @@ const PrivacyPolicyPage = () => {
       <Navbar />
       <main className="privacy-policy-page bg-hero-light min-h-screen">
         {/* Header */}
-        <div className="bg-hero-light border-b mt-20 border-gray-200">
+        <div className="bg-hero-light border-b border-black mt-20 ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex items-center justify-between mb-4">
               <Link
@@ -151,7 +151,7 @@ const PrivacyPolicyPage = () => {
             <h1 className="text-4xl lg:text-5xl font-bold text-hero-text-dark mb-2">
               {currentContent.title}
             </h1>
-            <p className="text-hero-text-dark/60 text-sm">
+            <p className="text-sm" style={{ color: 'rgba(45, 45, 45, 0.7)' }}>
               {currentContent.lastUpdated}
             </p>
           </div>

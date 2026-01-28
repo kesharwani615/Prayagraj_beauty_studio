@@ -79,11 +79,18 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               Services
             </Link>
             <Link
-              href="/pricing"
+              href="/artist"
               onClick={handleLinkClick}
               className="mobile-menu-link py-2 tracking-wide"
             >
-              Pricing
+              Artist
+            </Link>
+            <Link
+              href="/privacy-policy"
+              onClick={handleLinkClick}
+              className="mobile-menu-link py-2 tracking-wide"
+            >
+              Privacy Policy
             </Link>
             <Link
               href="/contact"
