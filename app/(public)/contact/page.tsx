@@ -8,14 +8,14 @@ const ContactPage = () => {
     <>
       <Navbar />
       <main className="contact-page fade-in-on-load">
-        <section className="contact-section bg-hero-light py-16 lg:py-24">
+        <section className="contact-section bg-hero-dark-black py-16 lg:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
               
               {/* Left Column - Contact Information */}
               <div className="contact-info-column space-y-6">
                 <div>
-                  <h1 className="contact-info-heading text-hero-text-dark mb-4">
+                  <h1 className="contact-info-heading text-hero-light mb-4">
                     Contact Information
                   </h1>
                   <p className="contact-info-description text-hero-text-dark/80">
@@ -50,7 +50,7 @@ const ContactPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="contact-detail-text text-hero-text-dark">
+                      <p className="contact-detail-text text-hero-light">
                       Ews 163 kalnidipurm rajroopur prayagraj
                       </p>
                     </div>
@@ -77,7 +77,7 @@ const ContactPage = () => {
                     <div>
                       <a 
                         href="mailto:prayagrajbeautystudio@gmail.com" 
-                        className="contact-detail-text text-hero-text-dark hover:text-hero-accent transition-colors duration-200"
+                        className="contact-detail-text text-hero-light hover:text-hero-accent transition-colors duration-200"
                       >
                         prayagrajbeautystudio@gmail.com
                       </a>
@@ -105,7 +105,7 @@ const ContactPage = () => {
                     <div>
                       <a 
                         href="tel:+919876543210" 
-                        className="contact-detail-text text-hero-text-dark hover:text-hero-accent transition-colors duration-200"
+                        className="contact-detail-text text-hero-light hover:text-hero-accent transition-colors duration-200"
                       >
                         +91 9792615969
                       </a>
@@ -152,7 +152,7 @@ const ContactPage = () => {
 
               {/* Right Column - Contact Form */}
               <div className="contact-form-column">
-                <h2 className="contact-form-heading text-hero-text-dark mb-6">
+                <h2 className="contact-form-heading text-hero-light mb-6">
                   Have a Question?
                 </h2>
 
